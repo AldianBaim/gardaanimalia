@@ -139,7 +139,7 @@ export default function Detail({ post }) {
 									<div className="row">
 										{
 											[...Array(9)].map((item, index) => (
-												<div className="col-lg-4">
+												<div key={index} className="col-lg-4">
 													<div className="card border-0 hover">
 														<div className="position-relative">
 															<img src="https://gardaanimalia.com/wp-content/uploads/2024/10/landak-jawa-ilustrasi-350x220.webp" className="w-100 position-relative rounded" alt="" />
@@ -161,7 +161,7 @@ export default function Detail({ post }) {
                   </div>
                   {
                     [0,1,2].map((item, index) => (
-                      <Link href="/satwa-liar" className="text-decoration-none text-dark">
+                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
                         <div className="row hover">
                           <div className="col-lg-4 mb-4">
                             <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover rounded" alt="" />
@@ -192,7 +192,7 @@ export default function Detail({ post }) {
                 </div>
               </div>
               {[...Array(5)].map((item, index) => (
-                  <div className="row mb-3">
+                  <div key={index} className="row mb-3">
                     <div className="col-lg-3 pe-0">
                       <img src="https://gardaanimalia.com/wp-content/uploads/2024/10/baning-coklat-150x150.webp" className="w-100" alt="" />
                     </div>

@@ -98,7 +98,7 @@ export default function Home() {
                   </div>
                   {
                     [0,1,2].map((item, index) => (
-                      <Link href="/satwa-liar" className="text-decoration-none text-dark">
+                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
                         <div className="row">
                           <div className="col-lg-4 mb-4">
                             <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover" alt="" />
@@ -121,7 +121,7 @@ export default function Home() {
             <div className="col-lg-4">
               {
                 [...Array(6)].map((item, index) => (
-                  <div class="ratio ratio-16x9 mb-3">
+                  <div key={index} class="ratio ratio-16x9 mb-3">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/w1GayXzWDRo?si=y9aVH7ID8GlozsBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                 ))
@@ -139,7 +139,7 @@ export default function Home() {
                 <div className="mt-3">
                   {
                     [0,1,2].map((item, index) => (
-                      <div className="row">
+                      <div key={index} className="row">
                         <div className="col-lg-4 mb-4">
                           <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover" alt="" />
                         </div>
@@ -180,7 +180,7 @@ export default function Home() {
               </div>
               {
                 [...Array(5)].map((item, index) => (
-                  <div className="row mb-3">
+                  <div key={index} className="row mb-3">
                     <div className="col-lg-3 pe-0">
                       <div className="d-flex align-items-center justify-content-center text-white h-100" style={{background: '#D3442C'}}>1</div>
                     </div>
