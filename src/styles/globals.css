@@ -35,6 +35,31 @@ a {
   text-decoration: none;
 }
 
+.text-xs {
+  font-size: .8rem;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.bg-orange {
+  background-color: #D3442C;
+}
+
+.bg-gold {
+  background-color: #DB9723;
+}
+
+.hover {
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.hover:hover {
+  transform: translateY(-5px);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
