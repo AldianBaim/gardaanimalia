@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Navbar() {
 	return (
@@ -6,7 +7,9 @@ export default function Navbar() {
 				<div className="row justify-content-center">
 					<div className="col-lg-9">
 						<div className="d-flex align-items-center">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2023/06/logo_media-siber-e1687348109934.webp" className="me-auto" alt="" />
+							<Link href="/" className="me-auto">
+								<img src="https://gardaanimalia.com/wp-content/uploads/2023/06/logo_media-siber-e1687348109934.webp" alt="Logo" />
+							</Link>
 							<div className="w-50 d-flex align-items-center gap-2">
 								<div className="small" style={{width: "45%"}}>Tuesday, November 26, 2024</div>
 								<div className="mx-2">|</div>

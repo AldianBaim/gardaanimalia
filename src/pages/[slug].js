@@ -1,32 +1,19 @@
 'use client'
 
 import Head from "next/head";
-import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
-import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
+//   const post = await res.json()
+//   // Pass data to the page via props
+//   return { props: { post } }
+// }
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
-  const post = await res.json()
-  // Pass data to the page via props
-  return { props: { post } }
-}
-
-export default function Detail({ post }) {
+export default function Detail() {
 
   const router = useRouter();
   console.log(router)
