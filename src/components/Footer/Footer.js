@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Footer() {
 	return (
@@ -27,25 +28,25 @@ export default function Footer() {
 						<li class="list-group-item p-0 border-0 mb-1">
 							<div className="d-flex align-items-center gap-1">
 								<span className="text-danger">#</span>
-								<a href="#" className="text-decoration-none text-muted text-xs">satwa dilindungi</a>
+								<Link href="/tag/satwa-dilindungi" className="text-decoration-none text-muted text-xs">satwa dilindungi</Link>
 							</div>
 						</li>
 						<li class="list-group-item p-0 border-0 mb-1">
 							<div className="d-flex align-items-center gap-1">
 								<span className="text-danger">#</span>
-								<a href="#" className="text-decoration-none text-muted text-xs">satwa liar</a>
+								<Link href="/tag/satwa-liar" className="text-decoration-none text-muted text-xs">satwa liar</Link>
 							</div>
 						</li>
 						<li class="list-group-item p-0 border-0 mb-1">
 							<div className="d-flex align-items-center gap-1">
 								<span className="text-danger">#</span>
-								<a href="#" className="text-decoration-none text-muted text-xs">harimau sumatera</a>
+								<Link href="/tag/harimau-sumatera" className="text-decoration-none text-muted text-xs">harimau sumatera</Link>
 							</div>
 						</li>
 						<li class="list-group-item p-0 border-0 mb-1">
 							<div className="d-flex align-items-center gap-1">
 								<span className="text-danger">#</span>
-								<a href="#" className="text-decoration-none text-muted text-xs">hewan dilindungi</a>
+								<Link href="/tag/hewan-dilindungi" className="text-decoration-none text-muted text-xs">hewan dilindungi</Link>
 							</div>
 						</li>
 					</ul>
@@ -56,10 +57,10 @@ export default function Footer() {
 						<div className="h5 m-0">Kategori</div>
 					</div>
 					<ul class="list-group">
-						<li class="list-group-item p-0 border-0 mb-1"><a href="#" className="text-decoration-none text-muted text-xs">Berita</a></li>
-						<li class="list-group-item p-0 border-0 mb-1"><a href="#" className="text-decoration-none text-muted text-xs">Hukum</a></li>
-						<li class="list-group-item p-0 border-0 mb-1"><a href="#" className="text-decoration-none text-muted text-xs">Edukasi</a></li>
-						<li class="list-group-item p-0 border-0 mb-1"><a href="#" className="text-decoration-none text-muted text-xs">Opini</a></li>
+						<li class="list-group-item p-0 border-0 mb-1"><Link href="/category/berita" className="text-decoration-none text-muted text-xs">Berita</Link></li>
+						<li class="list-group-item p-0 border-0 mb-1"><Link href="/category/hukum" className="text-decoration-none text-muted text-xs">Hukum</Link></li>
+						<li class="list-group-item p-0 border-0 mb-1"><Link href="/category/edukasi" className="text-decoration-none text-muted text-xs">Edukasi</Link></li>
+						<li class="list-group-item p-0 border-0 mb-1"><Link href="/category/opini" className="text-decoration-none text-muted text-xs">Opini</Link></li>
 					</ul>
 				</div>
 				<div className="col-lg-2 px-0">
@@ -68,10 +69,10 @@ export default function Footer() {
 						<div className="h5 m-0">Halaman</div>
 					</div>
 					<ul class="list-group">
-						<li class="list-group-item p-0 border-0 mb-2"><a href="#" className="text-decoration-none text-muted text-xs">Tentang Kami</a></li>
-						<li class="list-group-item p-0 border-0 mb-2"><a href="#" className="text-decoration-none text-muted text-xs">Susunan Redaksi</a></li>
-						<li class="list-group-item p-0 border-0 mb-2"><a href="#" className="text-decoration-none text-muted text-xs">Pedoman Media Siber</a></li>
-						<li class="list-group-item p-0 border-0"><a href="#" className="text-decoration-none text-muted text-xs">Disclaimer</a></li>
+						<li class="list-group-item p-0 border-0 mb-2"><Link href="/page/tentang-kami" className="text-decoration-none text-muted text-xs">Tentang Kami</Link></li>
+						<li class="list-group-item p-0 border-0 mb-2"><Link href="/page/susunan-redaksi" className="text-decoration-none text-muted text-xs">Susunan Redaksi</Link></li>
+						<li class="list-group-item p-0 border-0 mb-2"><Link href="/page/pedoman-media-siber" className="text-decoration-none text-muted text-xs">Pedoman Media Siber</Link></li>
+						<li class="list-group-item p-0 border-0"><Link href="/page/disclaimer" className="text-decoration-none text-muted text-xs">Disclaimer</Link></li>
 					</ul>
 				</div>
 			</div>

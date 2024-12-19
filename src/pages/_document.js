@@ -8,7 +8,7 @@ export default function Document() {
       <Head />
       <body>
         <Navbar/>
-        <div className="mx-5">
+        <main className="mx-4" style={{paddingTop: "100px"}}>
           <div className="row">
             <div className="col-lg-2">
               <img src="https://gardaanimalia.com/wp-content/uploads/2024/01/tesso-nilo-kiri.webp" className="w-100" alt="" />
@@ -23,7 +23,7 @@ export default function Document() {
               <img src="https://gardaanimalia.com/wp-content/uploads/2024/01/tesso-nilo-kiri.webp" className="w-100" alt="" />
             </div>
           </div>
-        </div>
+        </main>
         <NextScript />
       </body>
     </Html>

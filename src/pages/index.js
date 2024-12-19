@@ -1,20 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function Home() {
   
@@ -45,27 +32,24 @@ export default function Home() {
         <meta name="twitter:data2" content="10 minutes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
+      <div>
         <main className={styles.main}>
           <img src="https://gardaanimalia.com/wp-content/uploads/2024/09/darurat-perlidungan-satwa.jpg" className="w-100 object-fit-cover mb-3 mt-3" height={"300px"} alt="" />
-
           <div className="row">
             <div className="col-lg-8">
               <div className="card p-0 border-0">
                 <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-700x400.webp" className="w-100 object-fit-cover" height={"300px"} alt="" />
                 <div className="card-body p-0">
                   <div className="row m-0">
-                    <div className="col-lg-3 p-0">
-                      <div className="card border border-danger rounded-0">
+                    <div className="col-lg-3 p-0 border-top-hover">
+                      <div className="card border-0 rounded-0">
                         <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-350x220.webp" alt="Cover" />
                         <div className="card-body p-2 bg-body-tertiary">
                           <h6>Air dan Api Diserahkan ke BKSDA Kalteng</h6>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-3 p-0">
+                    <div className="col-lg-3 p-0 border-top-hover">
                       <div className="card border-0">
                         <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/lutung-budeng-beacukai-350x220.webp" alt="Cover" />
                         <div className="card-body p-2 bg-body-tertiary">
@@ -73,7 +57,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-3 p-0">
+                    <div className="col-lg-3 p-0 border-top-hover">
                       <div className="card border-0">
                         <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/katak-spesies-baru-350x220.webp" alt="Cover" />
                         <div className="card-body p-2 bg-body-tertiary">
@@ -81,7 +65,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-3 p-0">
+                    <div className="col-lg-3 p-0 border-top-hover">
                       <div className="card border-0">
                         <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/topeng-monyet-ekor-panjang-350x220.webp" alt="Cover" />
                         <div className="card-body p-2 bg-body-tertiary">
@@ -99,7 +83,7 @@ export default function Home() {
                   {
                     [0,1,2].map((item, index) => (
                       <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <div className="row">
+                        <div className="row hover">
                           <div className="col-lg-4 mb-4">
                             <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover" alt="" />
                           </div>
@@ -132,6 +116,7 @@ export default function Home() {
             title={"Laporan Investigatif"}
             perView={4}
             background={["#8FAB5A", "#DADDD6"]}
+            color={"text-white"}
           />
           <div className="row mt-3">
             <div className="col-lg-8">
@@ -140,7 +125,7 @@ export default function Home() {
                   {
                     [0,1,2].map((item, index) => (
                       <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <div className="row">
+                        <div className="row hover">
                           <div className="col-lg-4 mb-4">
                             <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover" alt="" />
                           </div>
@@ -162,7 +147,43 @@ export default function Home() {
                 title={"Konten Edukasi"}
                 perView={3}
                 background={["#FBEEEB", "#D95C46"]}
+                color={"text-dark"}
               />
+              <SectionSwiper
+                title={"Kolom Opini"}
+                perView={3}
+                background={["#FBEEEB", "#845C61"]}
+                color={"text-dark"}
+              />
+              <SectionSwiper
+                title={"Liputan Khusus"}
+                perView={3}
+                background={["#FFF", "#38799F"]}
+                color={"text-dark"}
+              />
+              <div className="card p-0 border-0">
+                <div className="mt-3">
+                  {
+                    [0,1,2].map((item, index) => (
+                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
+                        <div className="row hover">
+                          <div className="col-lg-4 mb-4">
+                            <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover" alt="" />
+                          </div>
+                          <div className="col-lg-8 py-2 px-0 text-xs">
+                            <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
+                            <div className="d-flex align-items-center gap-2 my-2">
+                              <small className="badge bg-danger p-1">Berita</small>
+                              <small>11/11/2024</small>
+                            </div>
+                            <small className="text-xs">Gardaanimalia.com – Dua anak owa jenggot putih (Hylobates albibarbis) yang diberi nama Air dan Api diserahkan oleh warga Sampit kepada…</small>
+                          </div>
+                        </div>
+                      </Link>
+                    ))
+                  }
+                </div>
+              </div>
             </div>
             <div className="col-lg-4">
               <div className="d-flex align-items-center mb-1">
@@ -182,15 +203,15 @@ export default function Home() {
               </div>
               {
                 [...Array(5)].map((item, index) => (
-                  <div key={index} className="row mb-3">
+                  <Link href="/satwa-liar" key={index} className="row mb-3 text-decoration-none text-dark hover">
                     <div className="col-lg-3 pe-0">
-                      <div className="d-flex align-items-center justify-content-center text-white h-100" style={{background: '#D3442C'}}>1</div>
+                      <div className="d-flex align-items-center justify-content-center text-white h-100" style={{background: '#D3442C'}}>{(index + 1) + 1}</div>
                     </div>
                     <div className="col-lg-9">
                       <div className="text-xs">Penyu Hijau Mati Terdampar di Pantai Legian, Diduga Dehidrasi</div>
                       <div className="text-xs text-muted">11/11/2024</div>
                     </div>
-                  </div>
+                  </Link>
                 ))
               }
               

@@ -1,9 +1,18 @@
 import Link from "next/link";
 
 export default function Navbar() {
+	function getFormattedDate() {
+		const date = new Date();
+		return date.toLocaleDateString('en-US', {
+			weekday: 'long', // Hari (contoh: Tuesday)
+			year: 'numeric', // Tahun (contoh: 2024)
+			month: 'long',   // Bulan (contoh: November)
+			day: 'numeric'   // Tanggal (contoh: 26)
+		});
+	}
 	return (
 		<div>
-			<nav className="px-2">
+			<nav className="px-2 fixed-top bg-white">
 				<div className="row justify-content-center">
 					<div className="col-lg-9">
 						<div className="d-flex align-items-center">
@@ -11,7 +20,7 @@ export default function Navbar() {
 								<img src="https://gardaanimalia.com/wp-content/uploads/2023/06/logo_media-siber-e1687348109934.webp" alt="Logo" />
 							</Link>
 							<div className="w-50 d-flex align-items-center gap-2">
-								<div className="small" style={{width: "45%"}}>Tuesday, November 26, 2024</div>
+								<div className="small" style={{width: "45%"}}>{getFormattedDate()}</div>
 								<div className="mx-2">|</div>
 								<div class="input-group" style={{ width: "40%" }}>
 									<input type="text" className="form-control border-end-0 rounded-start-pill bg-body-tertiary small" placeholder="Search" />
@@ -27,9 +36,11 @@ export default function Navbar() {
 										<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="25px" viewBox="0 0 24 24" width="25px" fill="currentColor"><g><rect fill="none" height="24" width="24"></rect></g><g><g><path d="M5,11h4c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2H5C3.9,3,3,3.9,3,5v4C3,10.1,3.9,11,5,11z"></path><path d="M5,21h4c1.1,0,2-0.9,2-2v-4c0-1.1-0.9-2-2-2H5c-1.1,0-2,0.9-2,2v4C3,20.1,3.9,21,5,21z"></path><path d="M13,5v4c0,1.1,0.9,2,2,2h4c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-4C13.9,3,13,3.9,13,5z"></path><path d="M15,21h4c1.1,0,2-0.9,2-2v-4c0-1.1-0.9-2-2-2h-4c-1.1,0-2,0.9-2,2v4C13,20.1,13.9,21,15,21z"></path></g></g></svg>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Action</a></li>
-										<li><a class="dropdown-item" href="#">Another action</a></li>
-										<li><a class="dropdown-item" href="#">Something else here</a></li>
+										<li><Link class="dropdown-item" href="/page/jurnalisme-investigasi-2023">Jurnalisme Investigasi 2023</Link></li>
+										<li><Link class="dropdown-item" href="/page/daftar-kontributor">Daftar Kontributor</Link></li>
+										<li><Link class="dropdown-item" href="/page/indeks-halaman">Indeks Halaman</Link></li>
+										<li><Link class="dropdown-item" href="/page/tentang-kami">Tentang Kami</Link></li>
+										<li><Link class="dropdown-item" href="/kontak-kami">Kontak Kami</Link></li>
 									</ul>
 								</div>
 							</div>
@@ -40,36 +51,36 @@ export default function Navbar() {
 					<div className="col-lg-9">
 						<div className="d-flex gap-4">
 							<div>
-								<a class="nav-link" href="#">Beranda</a>
+								<Link class="nav-link" href="/">Beranda</Link>
 							</div>
 							<div>
-								<a class="nav-link" href="#">Kabar Satwa</a>
+								<Link class="nav-link" href="/category/berita">Kabar Satwa</Link>
 							</div>
 							<div>
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Telik
 								</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Investigasi</a></li>
-									<li><a class="dropdown-item" href="#">In-depth</a></li>
-									<li><a class="dropdown-item" href="#">Feature</a></li>
-									<li><a class="dropdown-item" href="#">Menjarah Rumah Gajah</a></li>
+									<li><Link class="dropdown-item" href="/category/investigasi">Investigasi</Link></li>
+									<li><Link class="dropdown-item" href="/category/liputan-khusus">In-depth</Link></li>
+									<li><Link class="dropdown-item" href="/tag/feature">Feature</Link></li>
+									<li><a class="dropdown-item" href="https://tessonilo.gardaanimalia.com" target="_blank">Menjarah Rumah Gajah</a></li>
 								</ul>
 							</div>
 							<div>
-								<a class="nav-link" href="#">Opini</a>
+								<Link class="nav-link" href="/category/opini">Opini</Link>
 							</div>
 							<div>
-								<a class="nav-link" href="#">Edukasi</a>
+								<Link class="nav-link" href="/category/edukasi">Edukasi</Link>
 							</div>
 							<div>
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Susastra
 								</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Cerita Pendek</a></li>
-									<li><a class="dropdown-item" href="#">Musik</a></li>
-									<li><a class="dropdown-item" href="#">Puisi</a></li>
+									<li><Link class="dropdown-item" href="/tag/cerita-pendek">Cerita Pendek</Link></li>
+									<li><Link class="dropdown-item" href="/tag/musik">Musik</Link></li>
+									<li><Link class="dropdown-item" href="/tag/puisi">Puisi</Link></li>
 								</ul>
 							</div>
 							<div>
@@ -77,10 +88,10 @@ export default function Navbar() {
 									Publikasi
 								</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Jurnal</a></li>
-									<li><a class="dropdown-item" href="#">Ulasan</a></li>
-									<li><a class="dropdown-item" href="#">Infografis</a></li>
-									<li><a class="dropdown-item" href="#">Video</a></li>
+									<li><Link class="dropdown-item" href="/category/jurnal">Jurnal</Link></li>
+									<li><Link class="dropdown-item" href="/category/ulasan">Ulasan</Link></li>
+									<li><Link class="dropdown-item" href="/category/infografis">Infografis</Link></li>
+									<li><Link class="dropdown-item" href="/category/video">Video</Link></li>
 								</ul>
 							</div>
 							<div>
@@ -88,15 +99,15 @@ export default function Navbar() {
 									Kontributor
 								</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">Bergabung</a></li>
-									<li><a class="dropdown-item" href="#">Tugas Kontributor</a></li>
-									<li><a class="dropdown-item" href="#">Kirim Aduan</a></li>
-									<li><a class="dropdown-item" href="#">Laporkan Kejahatan!</a></li>
-									<li><a class="dropdown-item" href="#">FAQ</a></li>
+									<li><Link class="dropdown-item" href="/page/daftar-menjadi-kontributor">Bergabung</Link></li>
+									<li><Link class="dropdown-item" href="/page/tugas-kontributor">Tugas Kontributor</Link></li>
+									<li><Link class="dropdown-item" href="/kirim-aduan">Kirim Aduan</Link></li>
+									<li><a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLScSjj8TOsKLClJzj6aB3FC7Wq2PkIKS3q1YhRQBl92dUO5ygg/viewform?pli=1" target="_blank">Laporkan Kejahatan!</a></li>
+									<li><Link class="dropdown-item" href="/page/faq">FAQ</Link></li>
 								</ul>
 							</div>
 							<div>
-								<a class="nav-link" href="#">Indeks</a>
+								<Link class="nav-link" href="/indeks">Indeks</Link>
 							</div>
 						</div>
 					</div>

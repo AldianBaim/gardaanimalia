@@ -47,6 +47,11 @@ a {
   background-color: #D3442C;
 }
 
+.bg-dark-blue {
+  background-color: #016494 !important;
+  color: white !important;
+}
+
 .bg-gold {
   background-color: #DB9723;
 }
@@ -58,6 +63,40 @@ a {
 
 .hover:hover {
   transform: translateY(-5px);
+}
+
+.border-top-hover {
+  border-top: 5px solid #fff;
+  cursor: pointer;
+}
+
+.border-top-hover:hover {
+  border-top: 5px solid #D3442C;
+}
+
+/* Style umum untuk tombol navigasi */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%; /* Membuat lingkaran */
+  background-color: white; /* Warna latar putih */
+  color: black !important; /* Warna panah */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0px;
+  cursor: pointer;
+}
+
+
+.swiper-button-prev:after {
+  font-size: 20px !important;
+}
+
+.swiper-button-next:after {
+  font-size: 20px !important;
 }
 
 @media (prefers-color-scheme: dark) {
