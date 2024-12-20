@@ -55,7 +55,7 @@ export default function Tag() {
         
       >
         <main >
-          <img src="https://gardaanimalia.com/wp-content/uploads/2024/09/darurat-perlidungan-satwa.jpg" className="w-100 object-fit-cover mb-3" height={"300px"} alt="" />
+          <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png" className="w-100 object-fit-cover mb-3" height={"300px"} alt="" />
           <div className="d-flex align-items-center mb-3">
             <div style={{width: "10px", height: "17px", backgroundColor: "#DB9723", borderRadius: "3px"}} className="me-2"></div>
             <div className="h6 m-0">{title}</div>
@@ -64,7 +64,7 @@ export default function Tag() {
             <div className="col-lg-8">
               <div className="card p-0 border-0">
                 <div className="position-relative">
-                  <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-700x400.webp" className="w-100 object-fit-cover mb-2 position-relative" style={{filter: "brightness(70%)"}} height={"300px"} alt="" />
+                  <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.29.png" className="w-100 object-fit-cover mb-2 position-relative" style={{filter: "brightness(70%)"}} height={"300px"} alt="" />
                   <div className="position-absolute bottom-0 ms-3 mb-3 start-0 text-white">
                     <span className="badge bg-orange rounded-0">Berita</span>
                     <h4 className="w-75">Dari Medan menuju Jakarta, Dihentikan di Bakauheni</h4>
@@ -85,7 +85,7 @@ export default function Tag() {
             </div>
             <div className="col-lg-4 sticky-top top-0">
               <div className="card position-relative mb-3">
-                <img src="https://gardaanimalia.com/wp-content/uploads/2024/02/mep-kandang-350x220.webp" className="w-100" style={{filter: "brightness(70%)"}} alt="" />
+                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" style={{filter: "brightness(70%)"}} alt="" />
                 <div className="d-flex p-3 gap-2 position-absolute bottom-0">
                   <div className="text-white">
                     <div className="text-xs">Air dan Api Diserahkan ke BKSD</div>
@@ -96,7 +96,7 @@ export default function Tag() {
               {[...Array(5)].map((item, index) => (
                   <div key={index} className="row mb-3">
                     <div className="col-lg-3 pe-0">
-                      <img src="https://gardaanimalia.com/wp-content/uploads/2024/10/baning-coklat-150x150.webp" className="w-100" alt="" />
+                      <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.00.07.png" className="w-100" alt="" />
                     </div>
                     <div className="col-lg-9">
                       <div className="text-xs">Penyu Hijau Mati Terdampar di Pantai Legian, Diduga Dehidrasi</div>

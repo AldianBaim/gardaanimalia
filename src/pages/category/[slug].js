@@ -56,7 +56,7 @@ export default function Category() {
         
       >
         <main >
-          <img src="https://gardaanimalia.com/wp-content/uploads/2024/09/darurat-perlidungan-satwa.jpg" className="w-100 object-fit-cover mb-4" height={"300px"} alt="" />
+          <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png" className="w-100 object-fit-cover mb-4" height={"300px"} alt="" />
           <div className="row">
             <div className="col-lg-8">
               <div className="d-flex align-items-center mb-1">
@@ -66,7 +66,7 @@ export default function Category() {
               <div className="mb-3 small text-muted">Temukan berita hewan langka hari ini secara cepat, lengkap, dan akurat hanya di gardaanimalia.com</div>
               <div className="card p-0 border-0">
                 <div className="position-relative">
-                  <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-700x400.webp" className="w-100 object-fit-cover mb-2 position-relative" style={{filter: "brightness(70%)"}} height={"300px"} alt="" />
+                  <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.29.png" className="w-100 object-fit-cover mb-2 position-relative" style={{filter: "brightness(70%)"}} height={"300px"} alt="" />
                   <div className="position-absolute bottom-0 ms-3 mb-3 start-0 text-white">
                     <span className="badge bg-orange rounded-0">Berita</span>
                     <h4 className="w-75">Dari Medan menuju Jakarta, Dihentikan di Bakauheni</h4>
@@ -118,7 +118,7 @@ export default function Category() {
               </div>
               <div className="mb-3 small text-muted">Baca berita terbaru seputar satwa liar di sini</div>
               <div className="card position-relative mb-3">
-                <img src="https://gardaanimalia.com/wp-content/uploads/2024/02/mep-kandang-350x220.webp" className="w-100" style={{filter: "brightness(70%)"}} alt="" />
+                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" style={{filter: "brightness(70%)"}} alt="" />
                 <div className="d-flex p-3 gap-2 position-absolute bottom-0">
                   <div className="text-white">
                     <div className="text-xs">Air dan Api Diserahkan ke BKSD</div>
@@ -129,7 +129,7 @@ export default function Category() {
               {[...Array(5)].map((item, index) => (
                   <div key={index} className="row mb-3">
                     <div className="col-lg-3 pe-0">
-                      <img src="https://gardaanimalia.com/wp-content/uploads/2024/10/baning-coklat-150x150.webp" className="w-100" alt="" />
+                      <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.00.07.png" className="w-100" alt="" />
                     </div>
                     <div className="col-lg-9">
                       <div className="text-xs">Penyu Hijau Mati Terdampar di Pantai Legian, Diduga Dehidrasi</div>
@@ -144,7 +144,7 @@ export default function Category() {
               </div>
               <div className="text-xs text-muted mb-3">Baca berita terbaru seputar satwa liar di sini</div>
               <div className="card position-relative mb-3">
-                <img src="https://gardaanimalia.com/wp-content/uploads/2024/02/mep-kandang-350x220.webp" className="w-100" alt="" />
+                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" alt="" />
                 <div className="d-flex p-3 gap-2 position-absolute bottom-0" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))'}}>
                   <div className="d-flex align-items-center justify-content-center bg-orange text-white" style={{height: '80px', width: '140px'}}>1</div>
                   <div className="text-white">

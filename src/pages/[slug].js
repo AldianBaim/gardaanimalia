@@ -49,7 +49,7 @@ export default function Detail() {
         
       >
         <main className={styles.main}>
-          <img src="https://gardaanimalia.com/wp-content/uploads/2024/09/darurat-perlidungan-satwa.jpg" className="w-100 object-fit-cover mb-3" height={"300px"} alt="" />
+          <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png" className="w-100 object-fit-cover mb-3" height={"300px"} alt="" />
           <div className="row">
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
@@ -77,7 +77,7 @@ export default function Detail() {
 										<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path></svg>
 									</div>
 								</div>
-                <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-700x400.webp" className="w-100 object-fit-cover mb-2" height={"300px"} alt="" />
+                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.29.png" className="w-100 object-fit-cover mb-2" height={"300px"} alt="" />
 								<small className="text-xs text-muted">Lutung budeng (Trachypithecus auratus) yang diselamatkan dari penyelundupan. | Foto: sindikatpost.com</small>
 								
 								<div className="mt-3 mb-4">
@@ -129,7 +129,7 @@ export default function Detail() {
 												<div key={index} className="col-lg-4">
 													<div className="card border-0 hover">
 														<div className="position-relative">
-															<img src="https://gardaanimalia.com/wp-content/uploads/2024/10/landak-jawa-ilustrasi-350x220.webp" className="w-100 position-relative rounded" alt="" />
+															<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 position-relative rounded" alt="" />
 															<span className="badge bg-orange rounded-0 position-absolute bottom-0 start-0 m-2">Berita</span>
 														</div>
 														<div className="card-body p-0 py-2">
@@ -151,7 +151,7 @@ export default function Detail() {
                       <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
                         <div className="row hover">
                           <div className="col-lg-4 mb-4">
-                            <img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover rounded" alt="" />
+                            <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover rounded" alt="" />
                           </div>
                           <div className="col-lg-8 py-2 px-0 text-xs">
                             <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
@@ -170,7 +170,7 @@ export default function Detail() {
             </div>
             <div className="col-lg-4 sticky-top top-0">
               <div className="card position-relative mb-3">
-                <img src="https://gardaanimalia.com/wp-content/uploads/2024/02/mep-kandang-350x220.webp" className="w-100" alt="" />
+                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" alt="" />
                 <div className="d-flex p-3 gap-2 position-absolute bottom-0">
                   <div className="text-white">
                     <div className="text-xs">Air dan Api Diserahkan ke BKSD</div>
@@ -181,7 +181,7 @@ export default function Detail() {
               {[...Array(5)].map((item, index) => (
                   <div key={index} className="row mb-3">
                     <div className="col-lg-3 pe-0">
-                      <img src="https://gardaanimalia.com/wp-content/uploads/2024/10/baning-coklat-150x150.webp" className="w-100" alt="" />
+                      <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.00.07.png" className="w-100" alt="" />
                     </div>
                     <div className="col-lg-9">
                       <div className="text-xs">Penyu Hijau Mati Terdampar di Pantai Legian, Diduga Dehidrasi</div>

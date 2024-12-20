@@ -3,7 +3,7 @@ export default function CardHorizontal() {
 	return (
 		<div className="row hover">
 			<div className="col-lg-4 mb-4">
-				<img src="https://gardaanimalia.com/wp-content/uploads/2024/11/air-dan-api-180x130.webp" className="w-100 object-fit-cover rounded" alt="" />
+				<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover rounded" alt="" />
 			</div>
 			<div className="col-lg-8 py-2 px-0 text-xs">
 				<h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>

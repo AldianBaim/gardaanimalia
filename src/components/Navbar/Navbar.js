@@ -17,7 +17,7 @@ export default function Navbar() {
 					<div className="col-lg-9">
 						<div className="d-flex align-items-center">
 							<Link href="/" className="me-auto">
-								<img src="https://gardaanimalia.com/wp-content/uploads/2023/06/logo_media-siber-e1687348109934.webp" alt="Logo" />
+								<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.58.56.png" className="w-50" alt="Logo" />
 							</Link>
 							<div className="w-50 d-flex align-items-center gap-2">
 								<div className="small" style={{width: "45%"}}>{getFormattedDate()}</div>

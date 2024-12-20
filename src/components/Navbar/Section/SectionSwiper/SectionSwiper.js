@@ -26,7 +26,7 @@ export default function SectionSwiper({title, perView, background, color}) {
 				<SwiperSlide>
 					<div className="card border-0 hover" style={{background: "rgba(255, 255, 255, 0.5"}}>
 						<div className="position-relative">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2024/06/nuri-aru-350x220.webp" className="w-100 position-relative" alt="" />
+							<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.04.59.png?updatedAt=1734699908412" className="w-100 position-relative" alt="" />
 							<span className="badge position-absolute bottom-0 start-0 m-2" style={{background: "#87A54C"}}>Investigasi</span>
 						</div>
 						<div className="card-body p-2">
@@ -37,7 +37,7 @@ export default function SectionSwiper({title, perView, background, color}) {
 				<SwiperSlide>
 					<div className="card border-0 hover" style={{background: "rgba(255, 255, 255, 0.5"}}>
 						<div className="position-relative">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2024/06/nuri-aru-350x220.webp" className="w-100 position-relative" alt="" />
+							<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.04.59.png?updatedAt=1734699908412" className="w-100 position-relative" alt="" />
 							<span className="badge position-absolute bottom-0 start-0 m-2" style={{background: "#87A54C"}}>Investigasi</span>
 						</div>
 						<div className="card-body p-2">
@@ -48,7 +48,7 @@ export default function SectionSwiper({title, perView, background, color}) {
 				<SwiperSlide>
 					<div className="card border-0 hover" style={{background: "rgba(255, 255, 255, 0.5"}}>
 						<div className="position-relative">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2024/06/nuri-aru-350x220.webp" className="w-100 position-relative" alt="" />
+							<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.04.59.png?updatedAt=1734699908412" className="w-100 position-relative" alt="" />
 							<span className="badge position-absolute bottom-0 start-0 m-2" style={{background: "#87A54C"}}>Investigasi</span>
 						</div>
 						<div className="card-body p-2">
@@ -59,7 +59,7 @@ export default function SectionSwiper({title, perView, background, color}) {
 				<SwiperSlide>
 					<div className="card border-0 hover" style={{background: "rgba(255, 255, 255, 0.5"}}>
 						<div className="position-relative">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2024/06/nuri-aru-350x220.webp" className="w-100 position-relative" alt="" />
+							<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.04.59.png?updatedAt=1734699908412" className="w-100 position-relative" alt="" />
 							<span className="badge position-absolute bottom-0 start-0 m-2" style={{background: "#87A54C"}}>Investigasi</span>
 						</div>
 						<div className="card-body p-2">
@@ -70,7 +70,7 @@ export default function SectionSwiper({title, perView, background, color}) {
 				<SwiperSlide>
 					<div className="card border-0 hover" style={{background: "rgba(255, 255, 255, 0.5"}}>
 						<div className="position-relative">
-							<img src="https://gardaanimalia.com/wp-content/uploads/2024/06/nuri-aru-350x220.webp" className="w-100 position-relative" alt="" />
+							<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.04.59.png?updatedAt=1734699908412" className="w-100 position-relative" alt="" />
 							<span className="badge position-absolute bottom-0 start-0 m-2" style={{background: "#87A54C"}}>Investigasi</span>
 						</div>
 						<div className="card-body p-2">
