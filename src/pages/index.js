@@ -3,8 +3,18 @@ import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
 
-export default function Home() {
-  
+export async function getServerSideProps() {
+
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/`)
+  const response = await res.json()
+  const posts = response.data
+  // Pass data to the page via props
+  return { props: { posts } }
+}
+
+export default function Home({posts}) {
+  console.log(posts)
   return (
     <>
       <Head>
@@ -81,19 +91,21 @@ export default function Home() {
                     <div className="h5 m-0">Pos Terbaru</div>
                   </div>
                   {
-                    [0,1,2].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
+                    posts?.map((post, index) => (
+                      <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
                         <div className="row hover">
                           <div className="col-lg-4 mb-4">
-                            <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover" alt="" />
+                            <img src={post?.picture} className="w-100 object-fit-cover" alt="" />
                           </div>
                           <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
+                            <h6 className="m-0">{post?.title}</h6>
                             <div className="d-flex align-items-center gap-2 my-2">
-                              <small className="badge bg-orange p-1 rounded-0">Berita</small>
-                              <small>11/11/2024</small>
+                              {post.tags.split(",").map((tag, index) => (
+                                <small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
+                              ))}
+                              <small>{post?.created_at}</small>
                             </div>
-                            <small className="text-xs text-muted">Gardaanimalia.com – Dua anak owa jenggot putih (Hylobates albibarbis) yang diberi nama Air dan Api diserahkan oleh warga Sampit kepada…</small>
+                            <small className="text-xs text-muted">{post?.description}</small>
                           </div>
                         </div>
                       </Link>

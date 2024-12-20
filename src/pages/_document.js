@@ -16,10 +16,7 @@ export default function Document() {
         <main className="mx-4" style={{paddingTop: "100px"}}>
           <div className="row">
             <div className="col-lg-2 position-relative">
-              {banner1 && (
-                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/tesso%20nillo.jpeg" className="w-100 position-relative" alt="" />
-              )}
-              <button onClick={() => console.log('ok')} className="btn btn-sm rounded-circle btn-light p-2 py-1 top-0 end-0 position-absolute me-3 mt-2" style={{zIndex: "9999"}}>X</button>
+              <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/tesso%20nillo.jpeg" className="w-100 position-relative" alt="" />
             </div>
 
             <div className="col-lg-8">

@@ -8,15 +8,17 @@ import { useEffect, useState } from "react";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
-//   const post = await res.json()
-//   // Pass data to the page via props
-//   return { props: { post } }
-// }
+export async function getServerSideProps(context) {
+  const slug = context.params.slug;
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/${slug}`)
+  const response = await res.json()
+  const posts = response.data
+  // Pass data to the page via props
+  return { props: { posts } }
+}
 
-export default function Category() {
+export default function Category({posts}) {
 
   const [title, setTitle] = useState();
   const router = useRouter();
@@ -75,9 +77,9 @@ export default function Category() {
                 </div>
 								<div className="mt-3 mb-3">
                   {
-                    [0,1,2].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <CardHorizontal />
+                    posts?.map((post, index) => (
+                      <Link key={index} href={`/${post.slug}`} className="text-decoration-none text-dark">
+                        <CardHorizontal data={post} />
                       </Link>
                     ))
                   }

@@ -5,18 +5,20 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
-//   const post = await res.json()
-//   // Pass data to the page via props
-//   return { props: { post } }
-// }
+export async function getServerSideProps(context) {
+  const slug = context.params.slug;
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/detail/${slug}`)
+  const response = await res.json()
+  const post = response.data
+  // Pass data to the page via props
+  return { props: { post } }
+}
 
-export default function Detail() {
-
-  const router = useRouter();
-  console.log(router)
+export default function Detail({post}) {
+  
+  console.log(post)
+  const tags = post?.tags.split(",")
 
   return (
     <>
@@ -54,10 +56,11 @@ export default function Detail() {
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
 								<div className="d-flex gap-2 mb-2">
-									<span className="badge bg-orange rounded-0 p-1">Berita</span>
-									<span className="badge bg-warning rounded-0 p-1">Hukum</span>
+                  {tags?.map((tag) => (
+                    <span className="badge bg-orange rounded-0 p-1">{tag}</span>
+                  ))}
 								</div>
-								<h3>Empat Satwa Langka Diduga Dibius sebelum Diselundupkan ke India</h3>
+								<h3>{post?.title}</h3>
 								<div className="d-flex align-items-center mb-4 mt-3 text-muted">
 									<img src="https://secure.gravatar.com/avatar/?s=80&d=mm&r=g" width={"40px"} className="me-2 rounded-circle" alt="" />
 									<div className="d-flex flex-column text-xs">
@@ -77,13 +80,11 @@ export default function Detail() {
 										<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path></svg>
 									</div>
 								</div>
-                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.29.png" className="w-100 object-fit-cover mb-2" height={"300px"} alt="" />
-								<small className="text-xs text-muted">Lutung budeng (Trachypithecus auratus) yang diselamatkan dari penyelundupan. | Foto: sindikatpost.com</small>
+                <img src={post.picture} className="w-100 object-fit-cover mb-2" height={"300px"} alt="" />
+								<small className="text-xs text-muted">{post?.description}</small>
 								
 								<div className="mt-3 mb-4">
-									<p className="lead">Gardaanimalia.com – Warga Negara India berinisial STH (43) gagal menyelundupkan empat ekor satwa langka yang diduga telah dibius menuju Mumbai, India.</p>
-									<p className="lead">Gardaanimalia.com – Warga Negara India berinisial STH (43) gagal menyelundupkan empat ekor satwa langka yang diduga telah dibius menuju Mumbai, India.</p>
-									<p className="lead">Gardaanimalia.com – Warga Negara India berinisial STH (43) gagal menyelundupkan empat ekor satwa langka yang diduga telah dibius menuju Mumbai, India.</p>
+									<p className="lead">{post?.content}</p>
 								</div>
 
 								<div class="ratio ratio-16x9">
@@ -92,9 +93,11 @@ export default function Detail() {
                 
 								<div className="d-flex gap-3 mt-4">
 									<span className="badge bg-warning">Tags :</span>
-									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-1"># balai karantina</div>
-									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-1"># bea cukai</div>
-									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-1"># nuri raja ambon</div>
+                  {
+                    tags.map((tag, index) => (
+                      <div key={index} className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-1">{tag}</div>
+                    ))
+                  }
 								</div>
 								<div className="d-flex gap-3 mt-4">
 									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">Writer: Mutia Hanifah</div>
