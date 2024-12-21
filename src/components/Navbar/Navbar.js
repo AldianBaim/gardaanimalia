@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/compat/router";
 
 export default function Navbar() {
 	function getFormattedDate() {
@@ -11,14 +10,6 @@ export default function Navbar() {
 			day: 'numeric'   // Tanggal (contoh: 26)
 		});
 	}
-
-	const router = useRouter();
-
-	const handleSearch = (e) => {
-        const query = e.target.value;
-		console.log(query)
-        router.push(`/?search=${query}`);
-    };
 
 	return (
 		<div>
@@ -33,9 +24,9 @@ export default function Navbar() {
 								<div className="small" style={{width: "45%"}}>{getFormattedDate()}</div>
 								<div className="mx-2">|</div>
 								<div class="input-group" style={{ width: "40%" }}>
-									<input onChange={(e) => handleSearch(e)} type="text" className="form-control border-end-0 rounded-start-pill bg-body-tertiary small" placeholder="Search" />
+									<input type="text" className="form-control border-end-0 rounded-start-pill bg-body-tertiary small" placeholder="Search" />
 									<span class="input-group-text rounded-end-pill">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>
 									</span>
 								</div>
 								<button class="btn btn-sm m-0" type="button">

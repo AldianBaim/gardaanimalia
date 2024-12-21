@@ -3,7 +3,6 @@ import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 export async function getServerSideProps() {
 
@@ -18,10 +17,7 @@ export async function getServerSideProps() {
 export default function Home({data}) {
 
   const [posts, setPosts] = useState(data);
-
-  const router = useRouter();
-  const { search = '' } = router.query;
-  console.log(search);
+  const [keyword, setKeyword] = useState("");
 
   return (
     <>

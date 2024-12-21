@@ -3,7 +3,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
   const slug = context.params.slug;
