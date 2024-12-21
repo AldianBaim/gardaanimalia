@@ -17,8 +17,6 @@ export default function SectionSwiper({title, perView, background, color}) {
 			<Swiper 
 				spaceBetween={20}
 				slidesPerView={perView}
-				onSlideChange={() => console.log('slide change')}
-				onSwiper={(swiper) => console.log(swiper)} 
 				navigation={true}
 			 	modules={[Navigation]} 
 			 	className="mySwiper"

@@ -2,19 +2,27 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export async function getServerSideProps() {
 
   // Fetch data from external API
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/`)
   const response = await res.json()
-  const posts = response.data
+  const data = response.data
   // Pass data to the page via props
-  return { props: { posts } }
+  return { props: { data } }
 }
 
-export default function Home({posts}) {
-  console.log(posts)
+export default function Home({data}) {
+
+  const [posts, setPosts] = useState(data);
+
+  const router = useRouter();
+  const { search = '' } = router.query;
+  console.log(search);
+
   return (
     <>
       <Head>
@@ -110,6 +118,13 @@ export default function Home({posts}) {
                         </div>
                       </Link>
                     ))
+                  }
+                  {
+                    posts?.length === 0 && (
+                      <div className="text-center mt-4">
+                        <h5>Belum ada post</h5>
+                      </div>
+                    )
                   }
                 </div>
               </div>

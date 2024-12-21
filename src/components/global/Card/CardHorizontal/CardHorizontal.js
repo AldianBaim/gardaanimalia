@@ -1,10 +1,9 @@
 
 export default function CardHorizontal({data}) {
-	console.log(data)
 	return (
 		<div className="row hover">
 			<div className="col-lg-4 mb-4">
-				<img src={data?.picture} className="w-100 object-fit-cover rounded" alt={data?.title} />
+				<img src={data?.picture || "https://via.placeholder.com/150"} className="w-100 object-fit-cover rounded" alt={data?.title} />
 			</div>
 			<div className="col-lg-8 py-2 px-0 text-xs">
 				<h6 className="m-0">{data?.title}</h6>

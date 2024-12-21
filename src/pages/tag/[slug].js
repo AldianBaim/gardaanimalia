@@ -7,15 +7,17 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
-//   const post = await res.json()
-//   // Pass data to the page via props
-//   return { props: { post } }
-// }
+export async function getServerSideProps(context) {
+  const slug = context.params.slug;
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byTag/${slug}`)
+  const response = await res.json()
+  const posts = response.data
+  // Pass data to the page via props
+  return { props: { posts } }
+}
 
-export default function Tag() {
+export default function Tag({posts}) {
 
   const [title, setTitle] = useState();
   const router = useRouter();
@@ -74,11 +76,18 @@ export default function Tag() {
                 </div>
 								<div className="mt-3">
                   {
-                    [0,1,2].map((item, index) => (
+                    posts?.map((post, index) => (
                       <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <CardHorizontal />
+                        <CardHorizontal data={post} />
                       </Link>
                     ))
+                  }
+                  {
+                    posts?.length === 0 && (
+                      <div className="text-center mt-4">
+                        <h5>Belum ada post</h5>
+                      </div>
+                    )
                   }
                 </div>
               </div>

@@ -4,25 +4,21 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function Page() {
-	const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+export async function getServerSideProps(context) {
+  const slug = context.params.page;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pages/detail/${slug}`)
+  const response = await res.json()
+  const data = response.data
 
-    fetchData();
-  }, []);
+  // Pass data to the page via props
+  return { props: { data } }
+}
+
+export default function Page({data}) {
+  console.log(data)
+  
 
 	return (
     <>
@@ -58,7 +54,7 @@ export default function Page() {
           <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png" className="w-100 object-fit-cover mb-4" height={"300px"} alt="" />
           <div className="row">
             <div className="col-lg-8">
-              {data.title}
+              {data?.content}
             </div>
             <div className="col-lg-4">
               <div className="d-flex align-items-center mb-1">

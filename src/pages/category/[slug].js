@@ -83,6 +83,13 @@ export default function Category({posts}) {
                       </Link>
                     ))
                   }
+                  {
+                    posts?.length === 0 && (
+                      <div className="text-center mt-4">
+                        <h5>Belum ada post</h5>
+                      </div>
+                    )
+                  }
                 </div>
                 <SectionSwiper
                   title={"Konten Edukasi"}
