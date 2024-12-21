@@ -8,15 +8,15 @@ import { useEffect, useState } from "react";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 
-// export async function getServerSideProps(context) {
-//   const slug = context.params.slug;
-//   // Fetch data from external API
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/${slug}`)
-//   const response = await res.json()
-//   const posts = response.data
-//   // Pass data to the page via props
-//   return { props: { posts } }
-// }
+export async function getServerSideProps(context) {
+  const slug = context.params.slug;
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/${slug}`)
+  const response = await res.json()
+  const posts = response.data
+  // Pass data to the page via props
+  return { props: { posts } }
+}
 
 export default function Category({posts}) {
 
@@ -76,7 +76,7 @@ export default function Category({posts}) {
                   </div>
                 </div>
 								<div className="mt-3 mb-3">
-                  {/* {
+                  {
                     posts?.map((post, index) => (
                       <Link key={index} href={`/${post.slug}`} className="text-decoration-none text-dark">
                         <CardHorizontal data={post} />
@@ -89,7 +89,7 @@ export default function Category({posts}) {
                         <h5>Belum ada post</h5>
                       </div>
                     )
-                  } */}
+                  }
                 </div>
                 <SectionSwiper
                   title={"Konten Edukasi"}
