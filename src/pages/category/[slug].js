@@ -111,11 +111,18 @@ export default function Category({posts}) {
                 />
                 <div className="mt-3 mb-3">
                   {
-                    [0,1].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <CardHorizontal />
+                    posts?.map((post, index) => (
+                      <Link key={index} href={`/${post.slug}`} className="text-decoration-none text-dark">
+                        <CardHorizontal data={post} />
                       </Link>
                     ))
+                  }
+                  {
+                    posts?.length === 0 && (
+                      <div className="text-center mt-4">
+                        <h5>Belum ada post</h5>
+                      </div>
+                    )
                   }
                 </div>
               </div>
