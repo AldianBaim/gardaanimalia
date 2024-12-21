@@ -17,7 +17,6 @@ export async function getServerSideProps(context) {
 
 export default function Detail({post}) {
   
-  console.log(post)
   const tags = post?.tags.split(",")
 
   return (
@@ -56,8 +55,8 @@ export default function Detail({post}) {
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
 								<div className="d-flex gap-2 mb-2">
-                  {tags?.map((tag) => (
-                    <span className="badge bg-orange rounded-0 p-1">{tag}</span>
+                  {tags?.map((tag, index) => (
+                    <span key={index} className="badge bg-orange rounded-0 p-1">{tag}</span>
                   ))}
 								</div>
 								<h3>{post?.title}</h3>
