@@ -6,18 +6,28 @@ import { useState } from "react";
 
 export async function getServerSideProps() {
 
-  // Fetch data from external API
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/`)
-  const response = await res.json()
-  const data = response.data
-  // Pass data to the page via props
-  return { props: { data } }
+  try {
+    // Fetch data from external API
+    const [postsRes, popularPostRes] = await Promise.all([
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/popular`),
+    ]);
+
+    const { data: posts } = await postsRes.json();
+    const { data: popularPosts } = await popularPostRes.json();
+
+    // Pass data to the page via props
+    return { props: { posts, popularPosts } };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { notFound: true };
+  }
 }
 
-export default function Home({data}) {
+export default function Home({posts, popularPosts}) {
 
-  const [posts, setPosts] = useState(data);
-  const [keyword, setKeyword] = useState("");
+  // const [posts, setPosts] = useState(posts);
+  // const [keyword, setKeyword] = useState("");
 
   return (
     <>
@@ -209,35 +219,36 @@ export default function Home({data}) {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="d-flex align-items-center mb-1">
-                <div style={{width: "10px", height: "17px", backgroundColor: "#DB9723", borderRadius: "3px"}} className="me-2"></div>
-                <div className="h5 m-0">Pos Terbaru</div>
-              </div>
-              <div className="text-xs text-muted mb-3">Baca berita terbaru seputar satwa liar di sini</div>
+            <div className="d-flex align-items-center mb-1 mt-5">
+              <div style={{width: "10px", height: "17px", backgroundColor: "#DB9723", borderRadius: "3px"}} className="me-2"></div>
+              <div className="h5 m-0">Bacaan Populer</div>
+            </div>
+            <div className="text-xs text-muted mb-3">Baca berita terbaru seputar satwa liar di sini</div>
+            <Link href={`/${popularPosts[0]?.slug}`} className="text-decoration-none text-dark">
               <div className="card position-relative mb-3">
-                <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" alt="" />
+                <img src={popularPosts[0]?.picture} className="w-100" alt="cover" />
                 <div className="d-flex p-3 gap-2 position-absolute bottom-0" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))'}}>
-                  <div className="d-flex align-items-center justify-content-center bg-orange text-white" style={{height: '80px', width: '140px'}}>1</div>
+                  <div className="d-flex align-items-center justify-content-center bg-orange text-white" style={{width: '170px'}}>1</div>
                   <div className="text-white">
-                    <div className="text-xs">Jual konten penyiksaan monyet, pria asal Singkawan</div>
-                    <div className="text-xs">11/11/2024</div>
+                    <div className="text-xs text-ellipsis-2">{popularPosts[0]?.title}</div>
+                    <div className="text-xs">{popularPosts[0]?.created_at}</div>
                   </div>
                 </div>
               </div>
-              {
-                [...Array(5)].map((item, index) => (
-                  <Link href="/satwa-liar" key={index} className="row mb-3 text-decoration-none text-dark hover">
-                    <div className="col-lg-3 pe-0">
-                      <div className="d-flex align-items-center justify-content-center text-white h-100" style={{background: '#D3442C'}}>{(index + 1) + 1}</div>
-                    </div>
-                    <div className="col-lg-9">
-                      <div className="text-xs">Penyu Hijau Mati Terdampar di Pantai Legian, Diduga Dehidrasi</div>
-                      <div className="text-xs text-muted">11/11/2024</div>
-                    </div>
-                  </Link>
-                ))
-              }
-              
+            </Link>
+            {
+              popularPosts.slice(1).map((post, index) => (
+                <Link href={`/${post.slug}`} key={index} className="row mb-3 text-decoration-none text-dark hover">
+                  <div className="col-lg-3 pe-0">
+                    <div className="d-flex align-items-center justify-content-center text-white h-100" style={{background: '#D3442C'}}>{(index + 1) + 1}</div>
+                  </div>
+                  <div className="col-lg-9">
+                    <div className="text-xs text-ellipsis-2">{post?.title}</div>
+                    <div className="text-xs text-muted">{post?.created_at}</div>
+                  </div>
+                </Link>
+              ))
+            }
             </div>
           </div>
         </main>

@@ -4,19 +4,52 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 
-export async function getServerSideProps(context) {
-  const slug = context.params.slug;
-  // Fetch data from external API
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/detail/${slug}`)
-  const response = await res.json()
-  const post = response.data
-  // Pass data to the page via props
-  return { props: { post } }
+export async function getServerSideProps({ params }) {
+  const { slug } = params;
+
+  try {
+    // Fetch detail post and latest posts concurrently
+    const [detailRes, latestPostRes] = await Promise.all([
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/detail/${slug}`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
+    ]);
+
+    if (!detailRes.ok || !latestPostRes.ok) {
+      throw new Error('Failed to fetch detail or latest posts');
+    }
+
+    const { data: post } = await detailRes.json();
+    const { data: latestPosts } = await latestPostRes.json();
+
+    // Extract tags from the post
+    const tags = post.tags?.split(',') || [];
+
+    // Fetch related posts for each tag
+    const relatedPostPromises = tags.map((tag) =>
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/related/${tag.trim()}`)
+    );
+    const relatedPostResponses = await Promise.all(relatedPostPromises);
+
+    // Combine related posts, filtering out any failed requests
+    const relatedPostData = await Promise.all(
+      relatedPostResponses
+        .filter((res) => res.ok)
+        .map((res) => res.json())
+    );
+
+    const relatedPost = relatedPostData.flatMap(({ data }) => data);
+
+    // Pass data to the page via props
+    return { props: { post, latestPosts, relatedPost } };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return { notFound: true };
+  }
 }
 
-export default function Detail({post}) {
-  
-  const tags = post?.tags.split(",")
+
+
+export default function Detail({post, latestPosts, relatedPost}) {
 
   return (
     <>
@@ -45,16 +78,14 @@ export default function Detail({post}) {
         <meta name="twitter:data2" content="10 minutes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        
-      >
+      <div>
         <main className={styles.main}>
           <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png" className="w-100 object-fit-cover mb-3" height={"300px"} alt="" />
           <div className="row">
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
 								<div className="d-flex gap-2 mb-2">
-                  {tags?.map((tag, index) => (
+                  {post?.tags?.split(",")?.map((tag, index) => (
                     <span key={index} className="badge bg-orange rounded-0 p-1">{tag}</span>
                   ))}
 								</div>
@@ -82,7 +113,7 @@ export default function Detail({post}) {
 								<small className="text-xs text-muted">{post?.description}</small>
 								
 								<div className="mt-3 mb-4">
-									<p className="lead">{post?.content}</p>
+									<p className="lead" dangerouslySetInnerHTML={{ __html: post?.content }}></p>
 								</div>
 
 								<div class="ratio ratio-16x9">
@@ -91,11 +122,9 @@ export default function Detail({post}) {
                 
 								<div className="d-flex gap-3 mt-4">
 									<span className="badge bg-warning">Tags :</span>
-                  {
-                    tags?.map((tag, index) => (
-                      <div key={index} className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-1">{tag}</div>
-                    ))
-                  }
+                  {post?.tags?.split(",")?.map((tag, index) => (
+                    <span key={index} className="badge bg-orange rounded-0 p-1">{tag}</span>
+                  ))}
 								</div>
 								<div className="d-flex gap-3 mt-4">
 									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">Writer: Mutia Hanifah</div>
@@ -126,20 +155,33 @@ export default function Detail({post}) {
 									</div>
 									<div className="row">
 										{
-											[...Array(9)].map((item, index) => (
+											relatedPost.map((post, index) => (
 												<div key={index} className="col-lg-4">
-													<div className="card border-0 hover">
-														<div className="position-relative">
-															<img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 position-relative rounded" alt="" />
-															<span className="badge bg-orange rounded-0 position-absolute bottom-0 start-0 m-2">Berita</span>
-														</div>
-														<div className="card-body p-0 py-2">
-															<h6>Tujuh Satwa Serahan Akan segera di evakuasi</h6>
-														</div>
-													</div>
+                          <Link href={`/${post?.slug}`} className="text-decoration-none text-dark">
+                            <div className="card border-0 hover">
+                              <div className="position-relative">
+                                <img src={post?.picture || "https://via.placeholder.com/150"} className="w-100 position-relative rounded" alt="" />
+                                {post?.tags?.split(",").map((tag, index) => (
+                                  <span key={index} className="badge bg-orange rounded-0 position-absolute bottom-0 start-0 m-2">{tag}</span>
+                                ))}
+                              </div>
+                              <div className="card-body p-0 py-2">
+                                <h6>{post?.title}</h6>
+                              </div>
+                            </div>
+                          </Link>
 												</div>
 											))
 										}
+                    {relatedPost.length === 0 && (
+                      <div className="col-lg-12">
+                        <div className="card border-0">
+                          <div className="card-body p-0 py-2">
+                            <h6 className="text-center">Belum ada pos terkait</h6>
+                          </div>
+                        </div>
+                      </div>
+                    )}
 									</div>
 								</div>
 								<div className="mt-3">
@@ -148,23 +190,34 @@ export default function Detail({post}) {
                     <div className="h5 m-0">Pos Terbaru</div>
                   </div>
                   {
-                    [0,1,2].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
+                    latestPosts.map((latest, index) => (
+                      <Link key={index} href={`/${latest?.slug}`} className="text-decoration-none text-dark">
                         <div className="row hover">
                           <div className="col-lg-4 mb-4">
-                            <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover rounded" alt="" />
+                            <img src={latest?.picture || "https://via.placeholder.com/150"} className="w-100 object-fit-cover rounded" alt="" />
                           </div>
                           <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
+                            <h6 className="m-0">{latest?.title}</h6>
                             <div className="d-flex align-items-center gap-2 my-2">
-                              <small className="badge bg-orange p-1 rounded-0">Berita</small>
-                              <small>11/11/2024</small>
+                              {latest?.tags?.split(",").map((tag, index) => (
+                                <small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
+                              ))}
+                              <small>{latest?.created_at}</small>
                             </div>
-                            <small className="text-xs text-muted">Gardaanimalia.com – Dua anak owa jenggot putih (Hylobates albibarbis) yang diberi nama Air dan Api diserahkan oleh warga Sampit kepada…</small>
+                            <small className="text-xs text-muted">{latest?.description}</small>
                           </div>
                         </div>
                       </Link>
                     ))
+                  }
+                  {
+                    latestPosts.length === 0 && (
+                      <div className="card border-0">
+                        <div className="card-body p-0 py-2">
+                          <h6 className="text-center">Belum ada pos terbaru</h6>
+                        </div>
+                      </div>
+                    )
                   }
                 </div>
               </div>
