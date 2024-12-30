@@ -28,6 +28,33 @@ export default function Home({posts, popularPosts}) {
 
   // const [posts, setPosts] = useState(posts);
   // const [keyword, setKeyword] = useState("");
+  const [youtube, setYoutube] = useState([
+    {
+      id: "RNun7WCmB9I",
+      embed: "wq-G6yVv_bzsFvtY"
+    }, 
+    {
+      id: "r291XV3siCI",
+      embed: "g1IQnFzY_UDZayHR"
+    }, 
+    {
+      id: "yFyFZ5yQybs",
+      embed: "6EEviR3fO61Fx-Nr"
+    }, 
+    {
+      id: "SAK6dZaXY38",
+      embed: "WCCXC1MYgRMxiJMZ"
+    }, 
+    {
+      id: "g_wzrzhO_VM",
+      embed: "J0CoFU0VaFtObfm2"
+    }, 
+    {
+      id: "OvOWHO0Yvgw",
+      embed: "Gwx_-Q_2hbW-w4X8"
+    }
+  ]);
+    
 
   return (
     <>
@@ -137,11 +164,11 @@ export default function Home({posts, popularPosts}) {
             </div>
             <div className="col-lg-4">
               {
-                [...Array(6)].map((item, index) => (
+                youtube.map((video, index) => (
                   <div key={index} class="ratio ratio-16x9 mb-3">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w1GayXzWDRo?si=y9aVH7ID8GlozsBO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video?.id}?si=${video?.embed}`}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
-                ))
+                )).sort( () => Math.random() - 0.5)
               }
             </div>
           </div>
