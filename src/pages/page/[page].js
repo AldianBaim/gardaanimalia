@@ -97,7 +97,7 @@ export default function Page({posts, popularPosts, page}) {
               <div className="text-xs text-muted mb-3">Baca berita terbaru seputar satwa liar di sini</div>
               <Link href={`/${popularPosts[0]?.slug}`} className="text-decoration-none text-dark">
                 <div className="card position-relative mb-3 hover">
-                  <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.03.11.png" className="w-100" alt="" />
+                  <img src={popularPosts[0]?.picture} className="w-100" alt="" />
                   <div className="d-flex p-3 gap-2 position-absolute bottom-0" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))'}}>
                     <div className="d-flex align-items-center justify-content-center bg-orange text-white" style={{width: '140px'}}>1</div>
                     <div className="text-white">
