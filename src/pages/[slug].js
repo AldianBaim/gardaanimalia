@@ -51,21 +51,21 @@ export async function getServerSideProps({ params }) {
 
 
 export default function Detail({post, latestPosts, relatedPost}) {
-
+  const baseURL = window.location.origin
   return (
     <>
       <Head>
-        <meta name="description" content="Kakawin Nitisastra, pedoman kebijaksanaan hidup, mengajarkan bahwa harimau dan hutan adalah saudara. Jika seseorang memiliki niat buruk" />
-        <link rel="canonical" href="https://gardaanimalia.com/matinya-mitos-hutan-rimba-dan-harimau-di-tanah-jawa/" />
+        <meta name="description" content={post.description} />
+        <link rel="canonical" href={`${baseURL}/${post.slug}`} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Matinya Mitos, Hutan Rimba, dan Harimau di Tanah Jawa" />
-        <meta property="og:description" content="Kakawin Nitisastra, pedoman kebijaksanaan hidup, mengajarkan bahwa harimau dan hutan adalah saudara. Jika seseorang memiliki niat buruk" />
-        <meta property="og:url" content="https://gardaanimalia.com/matinya-mitos-hutan-rimba-dan-harimau-di-tanah-jawa/" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:url" content={`${baseURL}/${post.slug}`} />
         <meta property="og:site_name" content="Garda Animalia" />
         <meta property="article:publisher" content="https://www.facebook.com/pembelasatwaliar" />
-        <meta property="article:published_time" content="2023-12-21T23:10:43+00:00" />
-        <meta property="og:image" content="https://gardaanimalia.com/wp-content/uploads/2023/12/foto-1.jpg" />
+        <meta property="article:published_time" content={post.created_at} />
+        <meta property="og:image" content={post.picture} />
         <meta property="og:image:width" content="700" />
         <meta property="og:image:height" content="504" />
         <meta property="og:image:type" content="image/jpeg" />

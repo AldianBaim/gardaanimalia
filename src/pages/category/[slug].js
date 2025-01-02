@@ -92,7 +92,7 @@ export default function Category({posts, popularPosts, latestPosts}) {
                       <Link key={index} href={`/${post.slug}`} className="text-decoration-none text-dark">
                         <CardHorizontal data={post} />
                       </Link>
-                    ))
+                    )).slice(0, 5)
                   }
                   {
                     posts?.length === 0 && (
@@ -126,7 +126,7 @@ export default function Category({posts, popularPosts, latestPosts}) {
                       <Link key={index} href={`/${post.slug}`} className="text-decoration-none text-dark">
                         <CardHorizontal data={post} />
                       </Link>
-                    ))
+                    )).slice(5, 10)
                   }
                   {
                     posts?.length === 0 && (
