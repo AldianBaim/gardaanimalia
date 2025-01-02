@@ -26,10 +26,10 @@ export async function getServerSideProps({ params }) {
     const tags = post.tags?.split(',') || [];
 
     // Fetch related posts for each tag
-    const relatedPostPromises = tags.map((tag) =>
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/related/${tag.trim()}`)
-    );
-    const relatedPostResponses = await Promise.all(relatedPostPromises);
+    
+    const relatedPostPromises = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/related/${tags[0]}`)
+    
+    const relatedPostResponses = await Promise.all([relatedPostPromises]);
 
     // Combine related posts, filtering out any failed requests
     const relatedPostData = await Promise.all(
@@ -86,9 +86,11 @@ export default function Detail({post, latestPosts, relatedPost}) {
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
 								<div className="d-flex gap-2 mb-2">
-                  {post?.tags?.split(",")?.map((tag, index) => (
-                    <span key={index} className="badge bg-orange rounded-0 p-1">{tag}</span>
-                  ))}
+                  <div>
+                    {post?.tags?.split(",")?.map((tag, index) => (
+                      <span key={index} className="badge bg-orange rounded-0 p-1 me-2 mb-1">{tag}</span>
+                    ))}
+                  </div>
 								</div>
 								<h3>{post?.title}</h3>
 								<div className="d-flex align-items-center mb-4 mt-3 text-muted">
@@ -121,11 +123,17 @@ export default function Detail({post, latestPosts, relatedPost}) {
 									<iframe width="560" height="315" src="https://www.youtube.com/embed/7Ib5m4YM9lk?si=ZE9BnC1JiHmtOtcj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 
-								<div className="d-flex gap-3 mt-4">
-									<span className="badge bg-warning">Tags :</span>
-                  {post?.tags?.split(",")?.map((tag, index) => (
-                    <span key={index} className="badge bg-orange rounded-0 p-1">{tag}</span>
-                  ))}
+								<div className="row mt-4">
+                  <div className="col-1">
+                  <span className="badge bg-warning me-2">Tags :</span>
+                  </div>
+                  <div className="col-11">
+                    <div className="ms-1">
+                      {post?.tags?.split(",")?.map((tag, index) => (
+                        <span key={index} className="badge bg-orange rounded-0 p-1 me-2 mb-1">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
 								</div>
 								<div className="d-flex gap-3 mt-4">
 									<div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">Writer: Mutia Hanifah</div>
@@ -164,7 +172,7 @@ export default function Detail({post, latestPosts, relatedPost}) {
                                 <img src={post?.picture || "https://via.placeholder.com/150"} className="w-100 position-relative rounded" alt="" />
                                 {post?.tags?.split(",").map((tag, index) => (
                                   <span key={index} className="badge bg-orange rounded-0 position-absolute bottom-0 start-0 m-2">{tag}</span>
-                                ))}
+                                )).slice(0, 1)}
                               </div>
                               <div className="card-body p-0 py-2">
                                 <h6>{post?.title}</h6>

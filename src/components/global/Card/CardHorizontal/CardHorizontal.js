@@ -13,7 +13,7 @@ export default function CardHorizontal({data}) {
 					)).slice(0, 2)}
 					<small>{data?.created_at}</small>
 				</div>
-				<small className="text-xs text-muted">{data?.description}</small>
+				<small className="text-xs text-muted">{data?.description || "Belum ada deskripsi"}</small>
 			</div>
 		</div>
 	);

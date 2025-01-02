@@ -59,14 +59,14 @@ export default function Navbar() {
 						</div>
 					</div>
 				</div>
-				<div className="row justify-content-center p-2 text-white overflow-auto" style={{background: "linear-gradient(to right, #CC4630, #136491)"}}>
+				<div className="row justify-content-center p-2 text-white overflow-auto" style={{background: "linear-gradient(to right, #CC4630, #136491)", fontSize: "15px"}}>
 					<div className="col-lg-9">
 						<div className="d-flex gap-4">
 							<div>
 								<Link class="nav-link" href="/">Beranda</Link>
 							</div>
 							<div>
-								<Link class="nav-link" href="/category/berita">Kabar Satwa</Link>
+								<Link class="nav-link" href="/category/kabar-satwa">Kabar Satwa</Link>
 							</div>
 							<div>
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

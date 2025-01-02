@@ -1,22 +1,10 @@
 'use client'
 
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
-import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/1`)
-//   const post = await res.json()
-//   // Pass data to the page via props
-//   return { props: { post } }
-// }
-
-export default function Category() {
+export default function Indeks() {
   
   return (
     <>

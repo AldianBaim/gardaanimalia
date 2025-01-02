@@ -17,10 +17,10 @@ export default function App({ Component, pageProps }) {
       <Navbar />
       <main className="mx-4" style={{ paddingTop: "100px" }}>
         <div className="row">
-          <div className="col-lg-2 position-relative">
+          <div className="col-lg-2 text-center">
             <img
-              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/tesso%20nillo.jpeg"
-              className="w-100 position-relative"
+              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
+              className="w-75"
               alt=""
             />
           </div>
@@ -30,10 +30,10 @@ export default function App({ Component, pageProps }) {
             <Footer />
           </div>
 
-          <div className="col-lg-2">
+          <div className="col-lg-2 text-center">
             <img
-              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/tesso%20nillo.jpeg"
-              className="w-100"
+              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
+              className="w-75"
               alt=""
             />
           </div>

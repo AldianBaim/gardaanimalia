@@ -8,28 +8,34 @@ import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizont
 export async function getServerSideProps() {
 
   try {
-    // Fetch data from external API
-    const [postsRes, popularPostRes] = await Promise.all([
+
+    const [postsRes, popularPostRes, postInvestigatifRes, postOpiniRes, postEdukasiRes, postLiputanKhususRes] = await Promise.all([
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/popular`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/investigatif`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/opini`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/edukasi`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/liputan-khusus`),
     ]);
-
+    
     const { data: posts } = await postsRes.json();
     const { data: popularPosts } = await popularPostRes.json();
-
+    const { data: postInvestigatif } = await postInvestigatifRes.json();
+    const { data: postOpini } = await postOpiniRes.json();
+    const { data: postEdukasi } = await postEdukasiRes.json();
+    const { data: postLiputanKhusus } = await postLiputanKhususRes.json();
+  
     // Pass data to the page via props
-    return { props: { posts, popularPosts } };
+    return { props: { posts, popularPosts, postInvestigatif, postOpini, postEdukasi, postLiputanKhusus } };
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error("Error fetching data:", error);
     return { notFound: true };
   }
+  
 }
 
-export default function Home({posts, popularPosts}) {
-
-  // const [posts, setPosts] = useState(posts);
-  // const [keyword, setKeyword] = useState("");
-  const [youtube, setYoutube] = useState([
+export default function Home({posts, popularPosts, postInvestigatif, postOpini, postEdukasi, postLiputanKhusus}) {
+  const [youtube] = useState([
     {
       id: "RNun7WCmB9I",
       embed: "wq-G6yVv_bzsFvtY"
@@ -56,7 +62,6 @@ export default function Home({posts, popularPosts}) {
     }
   ]);
     
-
   return (
     <>
       <Head>
@@ -159,16 +164,20 @@ export default function Home({posts, popularPosts}) {
               }
             </div>
           </div>
-          <SectionSwiper
-            title={"Laporan Investigatif"}
-            perView={4}
-            background={["#8FAB5A", "#DADDD6"]}
-            color={"text-white"}
-          />
-          <div className="row mt-3">
+          {postInvestigatif.length !== 0 && (
+            <SectionSwiper
+              title={"Laporan Investigatif"}
+              badge={"investigatif"}
+              perView={4}
+              background={["#8FAB5A", "#DADDD6"]}
+              color={"text-white"}
+              data={postInvestigatif}
+            />
+          )}
+          <div className="row">
             <div className="col-lg-8">
               <div className="card p-0 border-0">
-                <div className="mt-3">
+                <div className="">
                 {
                   posts?.map((post, index) => (
                     <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
@@ -178,24 +187,36 @@ export default function Home({posts, popularPosts}) {
                 }
                 </div>
               </div>
-              <SectionSwiper
-                title={"Konten Edukasi"}
-                perView={3}
-                background={["#FBEEEB", "#D95C46"]}
-                color={"text-dark"}
-              />
-              <SectionSwiper
-                title={"Kolom Opini"}
-                perView={3}
-                background={["#FBEEEB", "#845C61"]}
-                color={"text-dark"}
-              />
-              <SectionSwiper
-                title={"Liputan Khusus"}
-                perView={3}
-                background={["#FFF", "#38799F"]}
-                color={"text-dark"}
-              />
+              {postInvestigatif.length !== 0 && (
+                <SectionSwiper
+                  title={"Konten Edukasi"}
+                  badge={"edukasi"}
+                  perView={3}
+                  background={["#FBEEEB", "#D95C46"]}
+                  color={"text-dark"}
+                  data={postEdukasi}
+                />
+              )}
+              {postOpini.length !== 0 && (
+                <SectionSwiper
+                  title={"Kolom Opini"}
+                  badge={"opini"}
+                  perView={3}
+                  background={["#FBEEEB", "#845C61"]}
+                  color={"text-dark"}
+                  data={postOpini}
+                />
+              )}
+              {postLiputanKhusus.length !== 0 && (
+                <SectionSwiper
+                  title={"Liputan Khusus"}
+                  badge={"liputan-khusus"}
+                  perView={3}
+                  background={["#FFF", "#38799F"]}
+                  color={"text-dark"}
+                  data={postLiputanKhusus}
+                />
+              )}
               <div className="card p-0 border-0">
                 <div className="mt-3">
                 {
@@ -234,7 +255,13 @@ export default function Home({posts, popularPosts}) {
                   </div>
                   <div className="col-lg-9">
                     <div className="text-xs text-ellipsis-2">{post?.title}</div>
-                    <div className="text-xs text-muted">{post?.created_at}</div>
+                    <div className="text-xs text-muted d-flex gap-2">
+                      <div>{post?.created_at}</div>
+                      <div className="d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 0 24 24" width="15px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"></path></svg>
+                        <div>{post?.views}</div>
+                      </div>
+                    </div>
                   </div>
                 </Link>
               ))

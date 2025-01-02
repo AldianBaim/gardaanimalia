@@ -13,25 +13,32 @@ export async function getServerSideProps({ params }) {
 
   try {
     // Fetch data from external API
-    const [postCategoryRes, popularPostRes, latestPostRes] = await Promise.all([
+    const [postCategoryRes, popularPostRes, latestPostRes, postOpiniRes, postEdukasiRes, postLiputanKhususRes] = await Promise.all([
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/${slug}`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/popular`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/opini`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/edukasi`),
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/liputan-khusus`),
+      
     ]);
 
     const { data: posts } = await postCategoryRes.json();
     const { data: popularPosts } = await popularPostRes.json();
     const { data: latestPosts } = await latestPostRes.json();
+    const { data: postOpini } = await postOpiniRes.json();
+    const { data: postEdukasi } = await postEdukasiRes.json();
+    const { data: postLiputanKhusus } = await postLiputanKhususRes.json();
 
     // Pass data to the page via props
-    return { props: { posts, popularPosts, latestPosts } };
+    return { props: { posts, popularPosts, latestPosts, postOpini, postEdukasi, postLiputanKhusus } };
   } catch (error) {
     console.error('Error fetching data:', error);
     return { notFound: true };
   }
 }
 
-export default function Category({posts, popularPosts, latestPosts}) {
+export default function Category({posts, popularPosts, latestPosts, postOpini, postEdukasi, postLiputanKhusus}) {
 
   const [title, setTitle] = useState();
   const router = useRouter();
@@ -102,24 +109,36 @@ export default function Category({posts, popularPosts, latestPosts}) {
                     )
                   }
                 </div>
-                <SectionSwiper
-                  title={"Konten Edukasi"}
-                  perView={3}
-                  background={["#FBEEEB", "#D95C46"]}
-                  color={"text-dark"}
-                />
-                <SectionSwiper
-                  title={"Kolom Opini"}
-                  perView={3}
-                  background={["#FBEEEB", "#845C61"]}
-                  color={"text-dark"}
-                />
-                <SectionSwiper
-                  title={"Liputan Khusus"}
-                  perView={3}
-                  background={["#FFF", "#38799F"]}
-                  color={"text-dark"}
-                />
+                {postEdukasi.length !== 0 && (
+                  <SectionSwiper
+                    title={"Konten Edukasi"}
+                    badge={"edukasi"}
+                    perView={3}
+                    background={["#FBEEEB", "#D95C46"]}
+                    color={"text-dark"}
+                    data={postEdukasi}
+                  />
+                )}
+                {postOpini.length !== 0 && (
+                  <SectionSwiper
+                    title={"Kolom Opini"}
+                    badge={"opini"}
+                    perView={3}
+                    background={["#FBEEEB", "#845C61"]}
+                    color={"text-dark"}
+                    data={postOpini}
+                  />
+                )}
+                {postLiputanKhusus.length !== 0 && (
+                  <SectionSwiper
+                    title={"Liputan Khusus"}
+                    badge={"liputan-khusus"}
+                    perView={3}
+                    background={["#FFF", "#38799F"]}
+                    color={"text-dark"}
+                    data={postLiputanKhusus}
+                  />
+                )}
                 <div className="mt-3 mb-3">
                   {
                     posts?.map((post, index) => (
