@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
 import { useState } from "react";
+import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 
 export async function getServerSideProps() {
 
@@ -134,23 +135,9 @@ export default function Home({posts, popularPosts}) {
                   {
                     posts?.map((post, index) => (
                       <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
-                        <div className="row hover">
-                          <div className="col-lg-4 mb-4">
-                            <img src={post?.picture} className="w-100 object-fit-cover" alt="" />
-                          </div>
-                          <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">{post?.title}</h6>
-                            <div className="d-flex align-items-center gap-2 my-2">
-                              {post.tags.split(",").map((tag, index) => (
-                                <small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
-                              ))}
-                              <small>{post?.created_at}</small>
-                            </div>
-                            <small className="text-xs text-muted">{post?.description}</small>
-                          </div>
-                        </div>
+                        <CardHorizontal data={post} />
                       </Link>
-                    ))
+                    )).slice(0, 5)
                   }
                   {
                     posts?.length === 0 && (
@@ -182,25 +169,13 @@ export default function Home({posts, popularPosts}) {
             <div className="col-lg-8">
               <div className="card p-0 border-0">
                 <div className="mt-3">
-                  {
-                    [0,1,2].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <div className="row hover">
-                          <div className="col-lg-4 mb-4">
-                            <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover" alt="" />
-                          </div>
-                          <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
-                            <div className="d-flex align-items-center gap-2 my-2">
-                              <small className="badge bg-danger p-1">Berita</small>
-                              <small>11/11/2024</small>
-                            </div>
-                            <small className="text-xs">Gardaanimalia.com – Dua anak owa jenggot putih (Hylobates albibarbis) yang diberi nama Air dan Api diserahkan oleh warga Sampit kepada…</small>
-                          </div>
-                        </div>
-                      </Link>
-                    ))
-                  }
+                {
+                  posts?.map((post, index) => (
+                    <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
+                      <CardHorizontal data={post} />
+                    </Link>
+                  )).slice(5, 10)
+                }
                 </div>
               </div>
               <SectionSwiper
@@ -223,25 +198,13 @@ export default function Home({posts, popularPosts}) {
               />
               <div className="card p-0 border-0">
                 <div className="mt-3">
-                  {
-                    [0,1,2].map((item, index) => (
-                      <Link key={index} href="/satwa-liar" className="text-decoration-none text-dark">
-                        <div className="row hover">
-                          <div className="col-lg-4 mb-4">
-                            <img src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2020.19.46.png" className="w-100 object-fit-cover" alt="" />
-                          </div>
-                          <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">Air dan Api Diserahkan ke BKSDA Kalteng</h6>
-                            <div className="d-flex align-items-center gap-2 my-2">
-                              <small className="badge bg-danger p-1">Berita</small>
-                              <small>11/11/2024</small>
-                            </div>
-                            <small className="text-xs">Gardaanimalia.com – Dua anak owa jenggot putih (Hylobates albibarbis) yang diberi nama Air dan Api diserahkan oleh warga Sampit kepada…</small>
-                          </div>
-                        </div>
-                      </Link>
-                    ))
-                  }
+                {
+                  posts?.map((post, index) => (
+                    <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
+                      <CardHorizontal data={post} />
+                    </Link>
+                  )).slice(10, 20)
+                }
                 </div>
               </div>
             </div>

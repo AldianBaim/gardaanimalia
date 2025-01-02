@@ -3,6 +3,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -190,23 +191,9 @@ export default function Detail({post, latestPosts, relatedPost}) {
                     <div className="h5 m-0">Pos Terbaru</div>
                   </div>
                   {
-                    latestPosts.map((latest, index) => (
-                      <Link key={index} href={`/${latest?.slug}`} className="text-decoration-none text-dark">
-                        <div className="row hover">
-                          <div className="col-lg-4 mb-4">
-                            <img src={latest?.picture || "https://via.placeholder.com/150"} className="w-100 object-fit-cover rounded" alt="" />
-                          </div>
-                          <div className="col-lg-8 py-2 px-0 text-xs">
-                            <h6 className="m-0">{latest?.title}</h6>
-                            <div className="d-flex align-items-center gap-2 my-2">
-                              {latest?.tags?.split(",").map((tag, index) => (
-                                <small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
-                              ))}
-                              <small>{latest?.created_at}</small>
-                            </div>
-                            <small className="text-xs text-muted">{latest?.description}</small>
-                          </div>
-                        </div>
+                    latestPosts.map((post, index) => (
+                      <Link key={index} href={`/${post?.slug}`} className="text-decoration-none text-dark">
+                        <CardHorizontal data={post} />
                       </Link>
                     ))
                   }

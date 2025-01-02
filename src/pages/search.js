@@ -73,7 +73,7 @@ export default function Search({posts}) {
                       <div className="d-flex align-items-center gap-2 my-2">
                         {post?.tags?.split(",").map((tag, index) => (
                           <small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
-                        ))}
+                        )).slice(0, 3)}
                         <small>{post?.created_at}</small>
                       </div>
                       <small className="text-xs text-muted">{post?.description}</small>

@@ -10,7 +10,7 @@ export default function CardHorizontal({data}) {
 				<div className="d-flex align-items-center gap-2 my-2">
 					{data?.tags?.split(",").map((tag, index) => (
 						<small key={index} className="badge bg-orange p-1 rounded-0">{tag}</small>
-					))}
+					)).slice(0, 2)}
 					<small>{data?.created_at}</small>
 				</div>
 				<small className="text-xs text-muted">{data?.description}</small>

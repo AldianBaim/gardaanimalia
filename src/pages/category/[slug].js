@@ -168,7 +168,7 @@ export default function Category({posts, popularPosts, latestPosts}) {
                     </div>
                   </div>
                 </Link>
-                ))
+                )).slice(0, 7)
               }
               <div className="d-flex align-items-center mb-1 mt-5">
                 <div style={{width: "10px", height: "17px", backgroundColor: "#DB9723", borderRadius: "3px"}} className="me-2"></div>
@@ -177,7 +177,7 @@ export default function Category({posts, popularPosts, latestPosts}) {
               <div className="text-xs text-muted mb-3">Baca berita terbaru seputar satwa liar di sini</div>
               <Link href={`/${popularPosts[0]?.slug}`} className="text-decoration-none text-dark">
                 <div className="card position-relative mb-3">
-                  <img src={popularPosts[0]?.picture} className="w-100" alt="cover" />
+                  <img src={`${popularPosts[0]?.picture}` ?? 'https://via.placeholder.com/700'} className="w-100" alt="Cover" />
                   <div className="d-flex p-3 gap-2 position-absolute bottom-0" style={{background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))'}}>
                     <div className="d-flex align-items-center justify-content-center bg-orange text-white" style={{width: '170px'}}>1</div>
                     <div className="text-white">
