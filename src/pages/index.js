@@ -151,23 +151,15 @@ export default function Home({
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
                   className="w-100 object-fit-cover mb-3 mt-lg-3"
-                  height={"300px"}
+                  height={"350px"}
                   alt=""
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/slide2.png"
                   className="w-100 object-fit-cover mb-3 mt-lg-3"
-                  height={"300px"}
-                  alt=""
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3"
-                  height={"300px"}
+                  height={"350px"}
                   alt=""
                 />
               </div>

@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
     <>
       <NextNProgress color="#FF869A" height={3} />
       <Navbar />
-      <main className="mx-4" style={{ paddingTop: "100px" }}>
+      <main className="mx-4" style={{ paddingTop: "110px" }}>
         <div className="row">
           <div className="col-lg-2 d-none d-lg-block text-center">
             <img
