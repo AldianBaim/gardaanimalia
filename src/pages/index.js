@@ -360,8 +360,8 @@ export default function Home({
                   </div>
                   {youtube
                     .map((video, index) => (
-                      <div className="col-lg-6">
-                        <div key={index} class="ratio ratio-16x9 mb-3">
+                      <div key={index} className="col-lg-6">
+                        <div class="ratio ratio-16x9 mb-3">
                           <iframe
                             width="560"
                             height="315"
