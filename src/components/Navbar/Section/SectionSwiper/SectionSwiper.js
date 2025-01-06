@@ -73,7 +73,7 @@ export default function SectionSwiper({
                 <div className="position-relative">
                   <img
                     src={item.picture}
-                    className="w-100 position-relative"
+                    className="w-100 position-relative rounded"
                     style={{ height: "400px", objectFit: "cover" }}
                     alt=""
                   />

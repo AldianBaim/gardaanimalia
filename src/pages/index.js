@@ -409,7 +409,7 @@ export default function Home({
                     href={`/${post?.slug}`}
                     className="text-decoration-none text-dark"
                   >
-                    <CardHorizontal data={post} />
+                    <CardHorizontal data={post} type="sidebar" />
                   </Link>
                 ))
                 .slice(0, 5)}
