@@ -186,17 +186,23 @@ export default function Detail({
                     </svg>
                   </div>
                 </div>
-                <img
-                  src={post?.picture}
-                  className="w-100 object-fit-cover mb-2"
-                  height={"300px"}
-                  alt=""
-                />
-                <small className="text-xs text-muted">
-                  {post?.description}
-                </small>
+                <div className="position-relative img-hover">
+                  <img
+                    src={post?.picture}
+                    className="w-100 object-fit-cover mb-2 position-relative"
+                    height={"300px"}
+                    alt=""
+                  />
+                  <div
+                    className="text-xs position-absolute bottom-0 mb-2 p-2 text-white description d-none"
+                    style={{ zIndex: 1, backgroundColor: "rgba(0,0,0,0.5)" }}
+                  >
+                    {post?.description ||
+                      "Belum ada deskripsim Lorem ipsum dolor sit amet,  corrupti tempore omnis esse rem."}
+                  </div>
+                </div>
 
-                <div className="mt-1 mb-4">
+                <div className="mb-4">
                   <p
                     className=""
                     dangerouslySetInnerHTML={{ __html: post?.content }}

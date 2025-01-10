@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins&display=swap");
 
 :root {
   --background: #ffffff;
@@ -35,7 +35,7 @@ a {
 }
 
 .text-xs {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .object-fit-cover {
@@ -43,7 +43,7 @@ a {
 }
 
 .bg-orange {
-  background-color: #D3442C;
+  background-color: #d3442c;
 }
 
 .bg-dark-blue {
@@ -52,12 +52,12 @@ a {
 }
 
 .bg-gold {
-  background-color: #DB9723;
+  background-color: #db9723;
 }
 
 .hover {
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .hover:hover {
@@ -77,7 +77,7 @@ a {
 }
 
 .border-top-hover:hover {
-  border-top: 5px solid #D3442C;
+  border-top: 5px solid #d3442c;
 }
 
 /* Style umum untuk tombol navigasi */
@@ -96,13 +96,21 @@ a {
   cursor: pointer;
 }
 
-
 .swiper-button-prev:after {
   font-size: 20px !important;
 }
 
 .swiper-button-next:after {
   font-size: 20px !important;
+}
+
+.img-hover {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.img-hover:hover .description {
+  display: block !important;
 }
 
 @media (prefers-color-scheme: dark) {
