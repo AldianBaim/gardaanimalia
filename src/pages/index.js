@@ -454,8 +454,8 @@ export default function Home({
               badge={"investigatif"}
               perView={3.5}
               background={["#8FAB5A", "#DADDD6"]}
-              color={"text-white"}
-              data={postInvestigatif}
+              color={"text-dark"}
+              data={postOpini}
             />
           )}
           <div className="row mt-3">
@@ -464,7 +464,7 @@ export default function Home({
                 <SectionSwiper
                   title={"Kolom Opini"}
                   badge={"opini"}
-                  perView={3}
+                  perView={3.5}
                   background={["#FBEEEB", "#845C61"]}
                   color={"text-dark"}
                   data={postOpini}
