@@ -20,7 +20,7 @@ export async function getServerSideProps() {
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/popular`),
       fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/investigatif`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/liputan-investigasi`
       ),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/opini`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/edukasi`),
