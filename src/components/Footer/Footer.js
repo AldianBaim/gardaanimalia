@@ -75,8 +75,8 @@ export default function Footer() {
             ></div>
             <div className="h5 m-0">Label</div>
           </div>
-          <ul class="list-group">
-            <li class="list-group-item p-0 border-0 mb-1">
+          <ul className="list-group">
+            <li className="list-group-item p-0 border-0 mb-1">
               <div className="d-flex align-items-center gap-1">
                 <span className="text-danger">#</span>
                 <Link
@@ -87,7 +87,7 @@ export default function Footer() {
                 </Link>
               </div>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <div className="d-flex align-items-center gap-1">
                 <span className="text-danger">#</span>
                 <Link
@@ -98,7 +98,7 @@ export default function Footer() {
                 </Link>
               </div>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <div className="d-flex align-items-center gap-1">
                 <span className="text-danger">#</span>
                 <Link
@@ -109,7 +109,7 @@ export default function Footer() {
                 </Link>
               </div>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <div className="d-flex align-items-center gap-1">
                 <span className="text-danger">#</span>
                 <Link
@@ -135,8 +135,8 @@ export default function Footer() {
             ></div>
             <div className="h5 m-0">Kategori</div>
           </div>
-          <ul class="list-group">
-            <li class="list-group-item p-0 border-0 mb-1">
+          <ul className="list-group">
+            <li className="list-group-item p-0 border-0 mb-1">
               <Link
                 href="/category/berita"
                 className="text-decoration-none text-muted text-xs"
@@ -144,7 +144,7 @@ export default function Footer() {
                 Berita
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <Link
                 href="/category/hukum"
                 className="text-decoration-none text-muted text-xs"
@@ -152,7 +152,7 @@ export default function Footer() {
                 Hukum
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <Link
                 href="/category/edukasi"
                 className="text-decoration-none text-muted text-xs"
@@ -160,7 +160,7 @@ export default function Footer() {
                 Edukasi
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0 mb-1">
+            <li className="list-group-item p-0 border-0 mb-1">
               <Link
                 href="/category/opini"
                 className="text-decoration-none text-muted text-xs"
@@ -183,8 +183,8 @@ export default function Footer() {
             ></div>
             <div className="h5 m-0">Halaman</div>
           </div>
-          <ul class="list-group">
-            <li class="list-group-item p-0 border-0 mb-2">
+          <ul className="list-group">
+            <li className="list-group-item p-0 border-0 mb-2">
               <Link
                 href="/page/tentang-kami"
                 className="text-decoration-none text-muted text-xs"
@@ -192,7 +192,7 @@ export default function Footer() {
                 Tentang Kami
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0 mb-2">
+            <li className="list-group-item p-0 border-0 mb-2">
               <Link
                 href="/page/susunan-redaksi"
                 className="text-decoration-none text-muted text-xs"
@@ -200,7 +200,7 @@ export default function Footer() {
                 Susunan Redaksi
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0 mb-2">
+            <li className="list-group-item p-0 border-0 mb-2">
               <Link
                 href="/page/pedoman-media-siber"
                 className="text-decoration-none text-muted text-xs"
@@ -208,7 +208,7 @@ export default function Footer() {
                 Pedoman Media Siber
               </Link>
             </li>
-            <li class="list-group-item p-0 border-0">
+            <li className="list-group-item p-0 border-0">
               <Link
                 href="/page/disclaimer"
                 className="text-decoration-none text-muted text-xs"

@@ -196,11 +196,11 @@ export default function Home({
         <main className={styles.main}>
           <div
             id="carouselExample"
-            class="carousel slide"
+            className="carousel slide"
             data-bs-ride="carousel"
           >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
                   className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
@@ -208,7 +208,7 @@ export default function Home({
                   alt="Slider 1"
                 />
               </div>
-              <div class="carousel-item">
+              <div className="carousel-item">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/slide2.png"
                   className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
@@ -218,28 +218,28 @@ export default function Home({
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              className="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide="prev"
             >
               <span
-                class="carousel-control-prev-icon"
+                className="carousel-control-prev-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Previous</span>
+              <span className="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide="next"
             >
               <span
-                class="carousel-control-next-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
-              <span class="visually-hidden">Next</span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
           <div className="row">
@@ -518,7 +518,7 @@ export default function Home({
                 {youtube
                   .map((video, index) => (
                     <div key={index} className="col-lg-4">
-                      <div class="ratio ratio-16x9 mb-3">
+                      <div className="ratio ratio-16x9 mb-3">
                         <iframe
                           width="560"
                           height="315"
@@ -567,7 +567,7 @@ export default function Home({
                 {youtube
                   .map((video, index) => (
                     <div key={index} className="col-lg-4">
-                      <div class="ratio ratio-16x9 mb-3">
+                      <div className="ratio ratio-16x9 mb-3">
                         <iframe
                           width="560"
                           height="315"

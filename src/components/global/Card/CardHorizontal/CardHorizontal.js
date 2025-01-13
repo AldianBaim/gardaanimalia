@@ -1,5 +1,4 @@
 export default function CardHorizontal({ data, type = "content" }) {
-  console.log(data);
   return (
     <div className="row hover mb-4 mb-lg-3">
       <div className="col-lg-4 px-0">
@@ -24,7 +23,7 @@ export default function CardHorizontal({ data, type = "content" }) {
             type === "content" ? "my-2" : "my-1"
           }`}
         >
-          {type === "content" && (
+          {type === "content" && data?.category_name && (
             <small className="badge bg-orange p-1 rounded-0">
               {data.category_name}
             </small>

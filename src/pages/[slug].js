@@ -235,7 +235,7 @@ export default function Detail({
                   ></p>
                 </div>
 
-                <div class="ratio ratio-16x9">
+                <div className="ratio ratio-16x9">
                   <iframe
                     width="560"
                     height="315"
