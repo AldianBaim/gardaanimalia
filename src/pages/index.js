@@ -88,53 +88,48 @@ export default function Home({
     },
   ]);
 
-  // const [sliders] = useState([
-  //   "https://images.unsplash.com/photo-1524655104453-91f9338ecb94?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   "https://plus.unsplash.com/premium_photo-1661843714194-62e7bc511d8b?q=80&w=3011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   "https://images.unsplash.com/photo-1511478907007-2f761980416b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  // ]);
-
   const [sliders] = useState([
     {
       slider_head: {
-        title: "Info terupdate satwa liar",
-        views: 200,
+        title:
+          "Selamatkan Rusa Timor, BKSDA Yogyakarta Lakukan Evakuasi dan Rehabilitasi",
+        views: 134,
         created_at: "13 Januari 2023",
         url: "https://images.unsplash.com/photo-1524655104453-91f9338ecb94?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       slider_foot: [
         {
-          title: "Lorem ipsum ",
-          views: 200,
-          created_at: "13 Januari 2023",
+          title: "Status konservasi komodo dalam IUCN redlist book",
+          views: 231,
+          created_at: "07 Januari 2023",
           url: "https://plus.unsplash.com/premium_photo-1661843714194-62e7bc511d8b?q=80&w=3011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
-          title: "Lorem ipsum dolor sit amet ct.",
-          views: 200,
-          created_at: "13 Januari 2023",
+          title: "Studi: Monyet Bisa Lihai Hindari Serangan Ular Karena Ini",
+          views: 189,
+          created_at: "08 Januari 2023",
           url: "https://images.unsplash.com/photo-1511478907007-2f761980416b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ],
     },
     {
       slider_head: {
-        title: "Info terupdate satwa liar",
-        views: 200,
-        created_at: "13 Januari 2023",
+        title: "Fakta Terbaru Tentang Monyet Ekor Panjang",
+        views: 319,
+        created_at: "01 Januari 2023",
         url: "https://images.unsplash.com/photo-1504509754994-456e667638ac?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       slider_foot: [
         {
-          title: "Lorem ipsum ",
-          views: 200,
-          created_at: "13 Januari 2023",
+          title: "Gajah Ngatini Lahirkan Bayi Betina di TWA Buluh Cina",
+          views: 287,
+          created_at: "03 Januari 2023",
           url: "https://images.unsplash.com/photo-1449104532935-d9209c70e2b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
-          title: "Lorem ipsum dolor sit amet ct.",
-          views: 200,
-          created_at: "13 Januari 2023",
+          title: "Jerapah Akan Masuk Daftar Spesies Terancam Punah",
+          views: 89,
+          created_at: "05 Januari 2023",
           url: "https://images.unsplash.com/photo-1683530364692-714f34db2d16?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ],
@@ -245,7 +240,7 @@ export default function Home({
           <div className="row">
             <div className="col-lg-8">
               <div className="card p-0 border-0">
-                <div>
+                <div className="mb-3">
                   <Swiper
                     spaceBetween={20}
                     slidesPerView={1}
@@ -312,17 +307,7 @@ export default function Home({
                     ))}
                   </Swiper>
                 </div>
-                {postEdukasi.length !== 0 && (
-                  <SectionSwiper
-                    title={"Kolom Investigatif"}
-                    badge={"investigatif"}
-                    perView={2.4}
-                    background={["#FBEEEB", "#D95C46"]}
-                    color={"text-dark"}
-                    data={postEdukasi}
-                  />
-                )}
-                <div className="card p-0 border-0">
+                <div className="card p-0 border-0 my-4">
                   <div className="">
                     {posts
                       ?.map((post, index) => (
@@ -467,7 +452,7 @@ export default function Home({
             <SectionSwiper
               title={"Laporan Investigatif"}
               badge={"investigatif"}
-              perView={4}
+              perView={3.5}
               background={["#8FAB5A", "#DADDD6"]}
               color={"text-white"}
               data={postInvestigatif}
@@ -475,16 +460,6 @@ export default function Home({
           )}
           <div className="row mt-3">
             <div className="col-lg-12 px-0">
-              {postInvestigatif.length !== 0 && (
-                <SectionSwiper
-                  title={"Konten Edukasi"}
-                  badge={"edukasi"}
-                  perView={3}
-                  background={["#FBEEEB", "#D95C46"]}
-                  color={"text-dark"}
-                  data={postEdukasi}
-                />
-              )}
               {postOpini.length !== 0 && (
                 <SectionSwiper
                   title={"Kolom Opini"}
@@ -496,7 +471,7 @@ export default function Home({
                 />
               )}
               <div
-                className="row rounded p-2 py-2 my-4"
+                className="row rounded p-2 mx-2 py-2 my-4"
                 style={{
                   background: "linear-gradient(to top, #8FAB5A, #fff",
                 }}
@@ -538,51 +513,22 @@ export default function Home({
                 <SectionSwiper
                   title={"Liputan Khusus"}
                   badge={"liputan-khusus"}
-                  perView={3}
+                  perView={3.5}
                   background={["#FFF", "#38799F"]}
                   color={"text-dark"}
                   data={postLiputanKhusus}
                 />
               )}
-              <div
-                className="row rounded p-2 py-2 my-4"
-                style={{
-                  background: "linear-gradient(to top,rgb(190, 194, 87), #fff",
-                }}
-              >
-                <div className="col-lg-12">
-                  <div className="d-flex align-items-center mb-3">
-                    <div
-                      style={{
-                        width: "10px",
-                        height: "17px",
-                        backgroundColor: "#DB9723",
-                        borderRadius: "3px",
-                      }}
-                      className="me-2"
-                    ></div>
-                    <h5 className="m-0">Kolom Edukasi</h5>
-                  </div>
-                </div>
-                {youtube
-                  .map((video, index) => (
-                    <div key={index} className="col-lg-4">
-                      <div className="ratio ratio-16x9 mb-3">
-                        <iframe
-                          width="560"
-                          height="315"
-                          src={`https://www.youtube.com/embed/${video?.id}?si=${video?.embed}`}
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  ))
-                  .sort(() => Math.random() - 0.5)}
-              </div>
+              {postEdukasi.length !== 0 && (
+                <SectionSwiper
+                  title={"Kolom Edukasi"}
+                  badge={"edukasi"}
+                  perView={3.5}
+                  background={["#FBEEEB", "#D95C46"]}
+                  color={"text-dark"}
+                  data={postEdukasi}
+                />
+              )}
             </div>
           </div>
         </main>

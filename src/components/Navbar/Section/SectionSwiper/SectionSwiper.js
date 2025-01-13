@@ -17,7 +17,7 @@ export default function SectionSwiper({
   data,
 }) {
   return (
-    <section className="p-1 mb-4">
+    <section className="p-1 px-lg-2 mb-4">
       <div className="d-flex align-items-center mb-3">
         <div
           style={{
@@ -58,7 +58,7 @@ export default function SectionSwiper({
           },
           // when window width is >= 768px
           768: {
-            slidesPerView: 3.5,
+            slidesPerView: perView,
           },
         }}
         className="mySwiper"

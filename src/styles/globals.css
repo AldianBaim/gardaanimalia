@@ -86,7 +86,7 @@ a {
   width: 40px !important;
   height: 40px !important;
   border-radius: 50%; /* Membuat lingkaran */
-  background-color: white; /* Warna latar putih */
+  background-color: rgba(255, 255, 255, 0.6); /* Warna latar putih */
   color: black !important; /* Warna panah */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
   display: flex;
