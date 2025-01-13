@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
           <div className="col-lg-2 d-none d-lg-block text-center">
             <img
               src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
-              className="w-75 object-fit-cover"
+              className="w-75 object-fit-cover sticky-top"
               style={{ height: "88vh" }}
               alt=""
             />

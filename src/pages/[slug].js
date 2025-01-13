@@ -4,6 +4,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
+import { useState } from "react";
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -57,6 +58,7 @@ export default function Detail({
   popularPosts,
 }) {
   const baseURL = window.location.origin;
+  const [showShare, setShowShare] = useState(false);
   return (
     <>
       <Head>
@@ -111,7 +113,7 @@ export default function Detail({
                   </div>
                 </div>
                 <h3>{post?.title}</h3>
-                <div className="d-flex align-items-center mb-4 mt-3 text-muted">
+                <div className="d-flex align-items-center mt-3 mb-2 text-muted">
                   <img
                     src="https://secure.gravatar.com/avatar/?s=80&d=mm&r=g"
                     width={"40px"}
@@ -172,7 +174,9 @@ export default function Detail({
                       height: "30px",
                       backgroundColor: "#3D5A98",
                     }}
-                    className="rounded-circle d-flex align-items-center justify-content-center text-white"
+                    onClick={() => setShowShare(!showShare)}
+                    role="button"
+                    className="rounded-circle d-flex align-items-center justify-content-center text-white dropdown"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +190,29 @@ export default function Detail({
                     </svg>
                   </div>
                 </div>
-                <div className="position-relative img-hover">
+                {showShare && (
+                  <div className="d-flex gap-3 align-items-center justify-content-center mb-2">
+                    <div className="d-flex gap-2">
+                      <a
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${baseURL}/${post.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src="/logo/facebook.png" width={30} alt="" />
+                      </a>
+                    </div>
+                    <div className="d-flex gap-2">
+                      <a
+                        href={`https://twitter.com/intent/tweet?url=${baseURL}/${post.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src="/logo/twitter.png" width={30} alt="" />
+                      </a>
+                    </div>
+                  </div>
+                )}
+                <div className="position-relative img-hover mt-2">
                   <img
                     src={post?.picture}
                     className="w-100 object-fit-cover mb-2 position-relative"

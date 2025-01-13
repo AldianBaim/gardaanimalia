@@ -88,6 +88,59 @@ export default function Home({
     },
   ]);
 
+  // const [sliders] = useState([
+  //   "https://images.unsplash.com/photo-1524655104453-91f9338ecb94?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   "https://plus.unsplash.com/premium_photo-1661843714194-62e7bc511d8b?q=80&w=3011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   "https://images.unsplash.com/photo-1511478907007-2f761980416b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  // ]);
+
+  const [sliders] = useState([
+    {
+      slider_head: {
+        title: "Info terupdate satwa liar",
+        views: 200,
+        created_at: "13 Januari 2023",
+        url: "https://images.unsplash.com/photo-1524655104453-91f9338ecb94?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      slider_foot: [
+        {
+          title: "Lorem ipsum ",
+          views: 200,
+          created_at: "13 Januari 2023",
+          url: "https://plus.unsplash.com/premium_photo-1661843714194-62e7bc511d8b?q=80&w=3011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+        {
+          title: "Lorem ipsum dolor sit amet ct.",
+          views: 200,
+          created_at: "13 Januari 2023",
+          url: "https://images.unsplash.com/photo-1511478907007-2f761980416b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+      ],
+    },
+    {
+      slider_head: {
+        title: "Info terupdate satwa liar",
+        views: 200,
+        created_at: "13 Januari 2023",
+        url: "https://images.unsplash.com/photo-1504509754994-456e667638ac?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
+      slider_foot: [
+        {
+          title: "Lorem ipsum ",
+          views: 200,
+          created_at: "13 Januari 2023",
+          url: "https://images.unsplash.com/photo-1449104532935-d9209c70e2b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+        {
+          title: "Lorem ipsum dolor sit amet ct.",
+          views: 200,
+          created_at: "13 Januari 2023",
+          url: "https://images.unsplash.com/photo-1683530364692-714f34db2d16?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+      ],
+    },
+  ]);
+
   return (
     <>
       <Head>
@@ -150,17 +203,17 @@ export default function Home({
               <div class="carousel-item active">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3"
-                  height={"350px"}
-                  alt=""
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
+                  height={"280px"}
+                  alt="Slider 1"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/slide2.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3"
-                  height={"350px"}
-                  alt=""
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
+                  height={"280px"}
+                  alt="Slider 2"
                 />
               </div>
             </div>
@@ -214,161 +267,61 @@ export default function Home({
                     }}
                     className="mySwiper"
                   >
-                    <SwiperSlide>
-                      <div className="card position-relative mb-2">
-                        <img
-                          src="https://plus.unsplash.com/premium_photo-1674478014427-4ab5680c34b4?q=80&w=3035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt=""
-                          className="w-100 object-fit-cover position-relative"
-                          height={"400px"}
-                        />
-                        <div className="position-absolute p-3 mb-5 bottom-0 text-white">
-                          <h6 className="text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus, vel voluptatem eum atque facilis aut
-                          </h6>
-                          <div className="d-flex">
-                            200 views | 12 January 2023
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-lg-6 px-1 mb-2">
-                          <div className="card position-relative">
-                            <img
-                              src="https://plus.unsplash.com/premium_photo-1674478014427-4ab5680c34b4?q=80&w=3035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                              alt=""
-                              className="position-relative"
-                            />
-                            <div className="position-absolute p-3 bottom-0 text-white">
-                              <div className="text-white small mb-2">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
-                              </div>
-                              <div className="d-flex small">
-                                200 views | 12 January 2023
-                              </div>
+                    {sliders.map((item, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="card position-relative mb-2">
+                          <img
+                            src={item.slider_head.url}
+                            alt="Banner 1"
+                            className="w-100 object-fit-cover position-relative img-dark"
+                            height={"400px"}
+                          />
+                          <div className="position-absolute p-3 mb-5 bottom-0 text-white">
+                            <h6 className="text-white">
+                              {item.slider_head.title}
+                            </h6>
+                            <div className="d-flex">
+                              {item.slider_head.views} views |{" "}
+                              {item.slider_head.created_at}
                             </div>
                           </div>
                         </div>
-                        <div className="col-lg-6 px-1">
-                          <div className="card position-relative">
-                            <img
-                              src="https://plus.unsplash.com/premium_photo-1674478014427-4ab5680c34b4?q=80&w=3035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                              alt=""
-                              className="position-relative"
-                            />
-                            <div className="position-absolute p-3 bottom-0 text-white">
-                              <div className="text-white small mb-2">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
-                              </div>
-                              <div className="d-flex small">
-                                200 views | 12 January 2023
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="card position-relative mb-2">
-                        <img
-                          src="https://images.unsplash.com/photo-1735541837548-3bd258a8ed53?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
-                          alt=""
-                          className="w-100 object-fit-cover position-relative"
-                          height={"400px"}
-                        />
-                        <div className="position-absolute p-3 mb-5 bottom-0 text-white">
-                          <h6 className="text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Minus, vel voluptatem eum atque facilis aut
-                          </h6>
-                          <div className="d-flex">
-                            200 views | 12 January 2023
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-lg-6 px-1 mb-2">
-                          <div className="card position-relative">
-                            <img
-                              src="https://images.unsplash.com/photo-1735541837548-3bd258a8ed53?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
-                              alt=""
-                              className="position-relative"
-                            />
-                            <div className="position-absolute p-3 bottom-0 text-white">
-                              <div className="text-white small mb-2">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
-                              </div>
-                              <div className="d-flex small">
-                                200 views | 12 January 2023
+                        <div className="row">
+                          {item.slider_foot.map((foot, index) => (
+                            <div key={index} className="col-lg-6 px-1 mb-2">
+                              <div className="card position-relative">
+                                <img
+                                  src={foot.url}
+                                  alt={foot.title}
+                                  className="position-relative object-fit-cover img-dark"
+                                  height={"200px"}
+                                />
+                                <div className="position-absolute p-3 bottom-0 text-white">
+                                  <div className="text-white small mb-2">
+                                    {foot.title}
+                                  </div>
+                                  <div className="d-flex small">
+                                    {foot.views} views | {foot.created_at}
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          ))}
                         </div>
-                        <div className="col-lg-6 px-1">
-                          <div className="card position-relative">
-                            <img
-                              src="https://images.unsplash.com/photo-1735541837548-3bd258a8ed53?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
-                              alt=""
-                              className="position-relative"
-                            />
-                            <div className="position-absolute p-3 bottom-0 text-white">
-                              <div className="text-white small mb-2">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit.
-                              </div>
-                              <div className="d-flex small">
-                                200 views | 12 January 2023
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
                 </div>
-                <div
-                  className="row rounded p-2 py-2 my-4"
-                  style={{
-                    background: "linear-gradient(to top, #8FAB5A, #fff",
-                  }}
-                >
-                  <div className="col-lg-12">
-                    <div className="d-flex align-items-center mb-3">
-                      <div
-                        style={{
-                          width: "10px",
-                          height: "17px",
-                          backgroundColor: "#DB9723",
-                          borderRadius: "3px",
-                        }}
-                        className="me-2"
-                      ></div>
-                      <h5 className="m-0">Video Youtube</h5>
-                    </div>
-                  </div>
-                  {youtube
-                    .map((video, index) => (
-                      <div key={index} className="col-lg-6">
-                        <div class="ratio ratio-16x9 mb-3">
-                          <iframe
-                            width="560"
-                            height="315"
-                            src={`https://www.youtube.com/embed/${video?.id}?si=${video?.embed}`}
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-                      </div>
-                    ))
-                    .sort(() => Math.random() - 0.5)}
-                </div>
+                {postEdukasi.length !== 0 && (
+                  <SectionSwiper
+                    title={"Kolom Investigatif"}
+                    badge={"investigatif"}
+                    perView={2.4}
+                    background={["#FBEEEB", "#D95C46"]}
+                    color={"text-dark"}
+                    data={postEdukasi}
+                  />
+                )}
                 <div className="card p-0 border-0">
                   <div className="">
                     {posts
@@ -521,7 +474,7 @@ export default function Home({
             />
           )}
           <div className="row mt-3">
-            <div className="col-lg-12">
+            <div className="col-lg-12 px-0">
               {postInvestigatif.length !== 0 && (
                 <SectionSwiper
                   title={"Konten Edukasi"}
@@ -542,6 +495,45 @@ export default function Home({
                   data={postOpini}
                 />
               )}
+              <div
+                className="row rounded p-2 py-2 my-4"
+                style={{
+                  background: "linear-gradient(to top, #8FAB5A, #fff",
+                }}
+              >
+                <div className="col-lg-12">
+                  <div className="d-flex align-items-center mb-3">
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "17px",
+                        backgroundColor: "#DB9723",
+                        borderRadius: "3px",
+                      }}
+                      className="me-2"
+                    ></div>
+                    <h5 className="m-0">Video Youtube</h5>
+                  </div>
+                </div>
+                {youtube
+                  .map((video, index) => (
+                    <div key={index} className="col-lg-4">
+                      <div class="ratio ratio-16x9 mb-3">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src={`https://www.youtube.com/embed/${video?.id}?si=${video?.embed}`}
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  ))
+                  .sort(() => Math.random() - 0.5)}
+              </div>
               {postLiputanKhusus.length !== 0 && (
                 <SectionSwiper
                   title={"Liputan Khusus"}
@@ -552,6 +544,45 @@ export default function Home({
                   data={postLiputanKhusus}
                 />
               )}
+              <div
+                className="row rounded p-2 py-2 my-4"
+                style={{
+                  background: "linear-gradient(to top,rgb(190, 194, 87), #fff",
+                }}
+              >
+                <div className="col-lg-12">
+                  <div className="d-flex align-items-center mb-3">
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "17px",
+                        backgroundColor: "#DB9723",
+                        borderRadius: "3px",
+                      }}
+                      className="me-2"
+                    ></div>
+                    <h5 className="m-0">Kolom Edukasi</h5>
+                  </div>
+                </div>
+                {youtube
+                  .map((video, index) => (
+                    <div key={index} className="col-lg-4">
+                      <div class="ratio ratio-16x9 mb-3">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src={`https://www.youtube.com/embed/${video?.id}?si=${video?.embed}`}
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  ))
+                  .sort(() => Math.random() - 0.5)}
+              </div>
             </div>
           </div>
         </main>

@@ -1,13 +1,15 @@
 export default function CardHorizontal({ data, type = "content" }) {
+  console.log(data);
   return (
     <div className="row hover mb-4 mb-lg-3">
       <div className="col-lg-4 px-0">
         <img
           src={data?.picture || "https://via.placeholder.com/150"}
-          className={`w-100 h-100 object-fit-cover ${
+          className={`w-100 object-fit-cover ${
             type === "content" && "rounded"
           }`}
           alt={data?.title}
+          height={type === "content" ? "150px" : "80px"}
         />
       </div>
       <div className="col-lg-8 text-xs">
@@ -17,21 +19,21 @@ export default function CardHorizontal({ data, type = "content" }) {
         {type === "sidebar" && (
           <div className="m-0 mt-1 mt-lg-0">{data?.title}</div>
         )}
-        <div className="d-flex flex-wrap d-block align-items-center gap-2 my-1">
-          {type === "content" &&
-            data?.tags
-              ?.split(",")
-              .map((tag, index) => (
-                <small key={index} className="badge bg-orange p-1 rounded-0">
-                  {tag}
-                </small>
-              ))
-              .slice(0, 2)}
+        <div
+          className={`d-flex flex-wrap d-block align-items-center gap-2 ${
+            type === "content" ? "my-2" : "my-1"
+          }`}
+        >
+          {type === "content" && (
+            <small className="badge bg-orange p-1 rounded-0">
+              {data.category_name}
+            </small>
+          )}
         </div>
         <small className="d-block mb-1">{data?.created_at}</small>
-        <small className="text-xs text-muted">
+        {/* <small className="text-xs text-muted">
           {data?.description || "Belum ada deskripsi"}
-        </small>
+        </small> */}
       </div>
     </div>
   );
