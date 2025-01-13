@@ -1,3 +1,4 @@
+import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -98,55 +99,28 @@ export default function Page({ posts, popularPosts, page }) {
                   }}
                   className="me-2"
                 ></div>
-                <div className="h6 m-0">Pos Terbaru</div>
+                <div className="h5 m-0">Pos terbaru</div>
               </div>
-              <div className="mb-3 small text-muted">
+              <div className="text-xs text-muted mb-3">
                 Baca berita terbaru seputar satwa liar di sini
               </div>
-              <Link
-                href={`/${posts[0]?.slug}`}
-                className="text-decoration-none text-dark"
-              >
-                <div className="card position-relative mb-3 hover">
-                  <img
-                    src={posts[0]?.picture}
-                    className="w-100"
-                    style={{ filter: "brightness(70%)" }}
-                    alt=""
-                  />
-                  <div className="d-flex p-3 gap-2 position-absolute bottom-0">
-                    <div className="text-white">
-                      <div className="text-xs">{posts[0]?.title}</div>
-                      <div className="text-xs">{posts[0]?.created_at}</div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              {posts.slice(1).map((post, index) => (
-                <Link
-                  href={`/${post.slug}`}
-                  key={index}
-                  className="text-decoration-none text-dark"
-                >
-                  <div className="row mb-3 hover">
-                    <div className="col-lg-3 pe-0">
-                      <img src={post?.picture} className="w-100" alt="" />
-                    </div>
-                    <div className="col-lg-9">
-                      <div className="text-xs">{post.title}</div>
-                      <div className="text-xs text-muted">
-                        {post.created_at}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-              {posts.length === 0 && (
-                <div className="text-center text-muted">
-                  Belum ada pos terbaru
+              {posts
+                ?.map((post, index) => (
+                  <Link
+                    key={index}
+                    href={`/${post?.slug}`}
+                    className="text-decoration-none text-dark"
+                  >
+                    <CardHorizontal data={post} type="sidebar" />
+                  </Link>
+                ))
+                .slice(0, 5)}
+              {posts?.length === 0 && (
+                <div className="text-center mt-4">
+                  <h5>Belum ada post</h5>
                 </div>
               )}
-              <div className="d-flex align-items-center mb-1 mt-5">
+              <div className="d-flex align-items-center mb-1 mt-4">
                 <div
                   style={{
                     width: "10px",
