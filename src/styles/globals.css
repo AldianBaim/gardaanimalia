@@ -113,6 +113,16 @@ a {
   transition: 0.5s ease-in-out;
 }
 
+.img-full {
+  height: 270px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-full {
+    height: 120px !important;
+  }
+}
+
 .img-hover:hover .description {
   display: block !important;
 }

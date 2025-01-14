@@ -198,16 +198,14 @@ export default function Home({
               <div className="carousel-item active">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
-                  height={"280px"}
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded img-full"
                   alt="Slider 1"
                 />
               </div>
               <div className="carousel-item">
                 <img
                   src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/slide2.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
-                  height={"280px"}
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded img-full"
                   alt="Slider 2"
                 />
               </div>
@@ -238,7 +236,7 @@ export default function Home({
             </button>
           </div>
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-lg-8 px-0 px-lg-2">
               <div className="card p-0 border-0">
                 <div className="mb-3">
                   <Swiper
@@ -324,7 +322,7 @@ export default function Home({
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 px-0 px-lg-2">
               <div className="d-flex align-items-center mb-1">
                 <div
                   style={{
@@ -448,18 +446,18 @@ export default function Home({
                 .slice(0, 6)}
             </div>
           </div>
-          {postInvestigatif.length !== 0 && (
-            <SectionSwiper
-              title={"Liputan Investigasi"}
-              badge={"liputan-investigasi"}
-              perView={3.5}
-              background={["#8FAB5A", "#DADDD6"]}
-              color={"text-dark"}
-              data={postOpini}
-            />
-          )}
           <div className="row mt-3">
             <div className="col-lg-12 px-0">
+              {postInvestigatif.length !== 0 && (
+                <SectionSwiper
+                  title={"Liputan Investigasi"}
+                  badge={"liputan-investigasi"}
+                  perView={3.5}
+                  background={["#8FAB5A", "#DADDD6"]}
+                  color={"text-dark"}
+                  data={postOpini}
+                />
+              )}
               {postOpini.length !== 0 && (
                 <SectionSwiper
                   title={"Kolom Opini"}
@@ -471,7 +469,7 @@ export default function Home({
                 />
               )}
               <div
-                className="row rounded p-2 mx-2 py-2 my-4"
+                className="row rounded p-2 mx-0 mx-lg-2 py-2 my-4"
                 style={{
                   background: "linear-gradient(to top, #8FAB5A, #fff",
                 }}

@@ -101,16 +101,11 @@ export default function Detail({
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
                 <div className="d-flex gap-2 mb-2">
-                  <div>
-                    {post?.tags?.split(",")?.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="badge bg-orange rounded-0 p-1 me-2 mb-1"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <Link href={`/category/${post?.category_slug}`}>
+                    <span className="badge bg-orange rounded-0 p-1 me-2 mb-1">
+                      {post?.category_name}
+                    </span>
+                  </Link>
                 </div>
                 <h3>{post?.title}</h3>
                 <div className="d-flex align-items-center mt-3 mb-2 text-muted">
@@ -147,7 +142,7 @@ export default function Detail({
                         <span className="ms-1">3 min read</span>
                       </div>
                     </div>
-                    <small className="">11/11/2024</small>
+                    <small className="">{post?.created_at}</small>
                   </div>
                   <div
                     style={{

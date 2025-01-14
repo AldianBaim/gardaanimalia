@@ -8,7 +8,7 @@ export default function CardHorizontal({ data, type = "content" }) {
             type === "content" && "rounded"
           }`}
           alt={data?.title}
-          height={type === "content" ? "150px" : "80px"}
+          height={type === "content" && "150px"}
         />
       </div>
       <div className="col-lg-8 text-xs">
