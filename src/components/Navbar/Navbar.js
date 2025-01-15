@@ -27,19 +27,19 @@ export default function Navbar() {
       <nav className="px-2 fixed-top bg-white">
         <div className="row justify-content-center">
           <div className="col-lg-9">
-            <nav className="navbar navbar-expand-lg">
-              <div className="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
                 <Link href="/" className="me-auto navbar-brand">
                   <img
                     src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.58.56.png"
                     alt="Logo"
                     width="200"
                     height="50"
-                    className="d-inline-block align-text-top"
+                    class="d-inline-block align-text-top"
                   />
                 </Link>
                 <button
-                  className="navbar-toggler"
+                  class="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent"
@@ -47,26 +47,26 @@ export default function Navbar() {
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <span className="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
                 </button>
                 <div
-                  className="collapse navbar-collapse"
+                  class="collapse navbar-collapse"
                   id="navbarSupportedContent"
                 >
-                  <ul className="navbar-nav d-block d-lg-none me-auto mb-2 mb-lg-0">
+                  <ul class="navbar-nav d-block d-lg-none me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                      <Link className="nav-link" href="/">
+                      <Link class="nav-link" href="/">
                         Beranda
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/category/kabar-satwa">
+                      <Link class="nav-link" href="/category/kabar-satwa">
                         Kabar Satwa
                       </Link>
                     </li>
                     <li className="nav-item">
                       <a
-                        className="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -74,10 +74,10 @@ export default function Navbar() {
                       >
                         Telik
                       </a>
-                      <ul className="dropdown-menu">
+                      <ul class="dropdown-menu">
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/category/investigasi"
                           >
                             Investigasi
@@ -85,20 +85,20 @@ export default function Navbar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/category/liputan-khusus"
                           >
                             In-depth
                           </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/tag/feature">
+                          <Link class="dropdown-item" href="/tag/feature">
                             Feature
                           </Link>
                         </li>
                         <li>
                           <a
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="https://tessonilo.gardaanimalia.com"
                             target="_blank"
                           >
@@ -108,18 +108,18 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/category/opini">
+                      <Link class="nav-link" href="/category/opini">
                         Opini
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/category/edukasi">
+                      <Link class="nav-link" href="/category/edukasi">
                         Edukasi
                       </Link>
                     </li>
                     <li className="nav-item">
                       <a
-                        className="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -127,22 +127,19 @@ export default function Navbar() {
                       >
                         Susastra
                       </a>
-                      <ul className="dropdown-menu">
+                      <ul class="dropdown-menu">
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            href="/tag/cerita-pendek"
-                          >
+                          <Link class="dropdown-item" href="/tag/cerita-pendek">
                             Cerita Pendek
                           </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/tag/musik">
+                          <Link class="dropdown-item" href="/tag/musik">
                             Musik
                           </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/tag/puisi">
+                          <Link class="dropdown-item" href="/tag/puisi">
                             Puisi
                           </Link>
                         </li>
@@ -150,7 +147,7 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                       <a
-                        className="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -158,36 +155,27 @@ export default function Navbar() {
                       >
                         Publikasi
                       </a>
-                      <ul className="dropdown-menu">
+                      <ul class="dropdown-menu">
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            href="/category/jurnal"
-                          >
+                          <Link class="dropdown-item" href="/category/jurnal">
                             Jurnal
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            href="/category/ulasan"
-                          >
+                          <Link class="dropdown-item" href="/category/ulasan">
                             Ulasan
                           </Link>
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/category/infografis"
                           >
                             Infografis
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            href="/category/video"
-                          >
+                          <Link class="dropdown-item" href="/category/video">
                             Video
                           </Link>
                         </li>
@@ -195,7 +183,7 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                       <a
-                        className="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -203,10 +191,10 @@ export default function Navbar() {
                       >
                         Kontributor
                       </a>
-                      <ul className="dropdown-menu">
+                      <ul class="dropdown-menu">
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/page/daftar-menjadi-kontributor"
                           >
                             Bergabung
@@ -214,20 +202,20 @@ export default function Navbar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/page/tugas-kontributor"
                           >
                             Tugas Kontributor
                           </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/kirim-aduan">
+                          <Link class="dropdown-item" href="/kirim-aduan">
                             Kirim Aduan
                           </Link>
                         </li>
                         <li>
                           <a
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="https://docs.google.com/forms/d/e/1FAIpQLScSjj8TOsKLClJzj6aB3FC7Wq2PkIKS3q1YhRQBl92dUO5ygg/viewform?pli=1"
                             target="_blank"
                           >
@@ -235,19 +223,19 @@ export default function Navbar() {
                           </a>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/page/faq">
+                          <Link class="dropdown-item" href="/page/faq">
                             FAQ
                           </Link>
                         </li>
                       </ul>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" href="/indeks">
+                      <Link class="nav-link" href="/indeks">
                         Indeks
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <div className="input-group">
+                      <div class="input-group">
                         <input
                           type="text"
                           value={search}
@@ -258,7 +246,7 @@ export default function Navbar() {
                           className="form-control border-end-0 rounded-start-pill bg-body-tertiary small"
                           placeholder="Search"
                         />
-                        <span className="input-group-text rounded-end-pill">
+                        <span class="input-group-text rounded-end-pill">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             height="24px"
@@ -277,7 +265,7 @@ export default function Navbar() {
                   <div className="d-none d-lg-flex align-items-center gap-2 ms-auto">
                     <div className="small">{getFormattedDate()}</div>
                     <div className="mx-2">|</div>
-                    <div className="input-group" style={{ width: "40%" }}>
+                    <div class="input-group" style={{ width: "40%" }}>
                       <input
                         type="text"
                         value={search}
@@ -286,7 +274,7 @@ export default function Navbar() {
                         className="form-control border-end-0 rounded-start-pill bg-body-tertiary small"
                         placeholder="Search"
                       />
-                      <span className="input-group-text rounded-end-pill">
+                      <span class="input-group-text rounded-end-pill">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="24px"
@@ -299,7 +287,7 @@ export default function Navbar() {
                         </svg>
                       </span>
                     </div>
-                    <button className="btn btn-sm m-0" type="button">
+                    <button class="btn btn-sm m-0" type="button">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="24px"
@@ -311,9 +299,9 @@ export default function Navbar() {
                         <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12.29 7c-.74 0-1.45.17-2.08.46 1.72.79 2.92 2.53 2.92 4.54s-1.2 3.75-2.92 4.54c.63.29 1.34.46 2.08.46 2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path>
                       </svg>
                     </button>
-                    <div className="dropdown">
+                    <div class="dropdown">
                       <button
-                        className="btn btn-sm m-0"
+                        class="btn btn-sm m-0"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -339,10 +327,10 @@ export default function Navbar() {
                           </g>
                         </svg>
                       </button>
-                      <ul className="dropdown-menu">
+                      <ul class="dropdown-menu">
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/page/jurnalisme-investigasi-2023"
                           >
                             Jurnalisme Investigasi 2023
@@ -350,7 +338,7 @@ export default function Navbar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/page/daftar-kontributor"
                           >
                             Daftar Kontributor
@@ -358,22 +346,19 @@ export default function Navbar() {
                         </li>
                         <li>
                           <Link
-                            className="dropdown-item"
+                            class="dropdown-item"
                             href="/page/indeks-halaman"
                           >
                             Indeks Halaman
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            className="dropdown-item"
-                            href="/page/tentang-kami"
-                          >
+                          <Link class="dropdown-item" href="/page/tentang-kami">
                             Tentang Kami
                           </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" href="/kontak-kami">
+                          <Link class="dropdown-item" href="/kontak-kami">
                             Kontak Kami
                           </Link>
                         </li>
@@ -396,18 +381,18 @@ export default function Navbar() {
           <div className="col-lg-9">
             <div className="d-flex gap-4">
               <div>
-                <Link className="nav-link" href="/">
+                <Link class="nav-link" href="/">
                   Beranda
                 </Link>
               </div>
               <div>
-                <Link className="nav-link" href="/category/kabar-satwa">
+                <Link class="nav-link" href="/category/kabar-satwa">
                   Kabar Satwa
                 </Link>
               </div>
               <div>
                 <a
-                  className="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -415,31 +400,25 @@ export default function Navbar() {
                 >
                   Telik
                 </a>
-                <ul className="dropdown-menu">
+                <ul class="dropdown-menu">
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      href="/category/investigasi"
-                    >
+                    <Link class="dropdown-item" href="/category/investigasi">
                       Investigasi
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      href="/category/liputan-khusus"
-                    >
+                    <Link class="dropdown-item" href="/category/liputan-khusus">
                       In-depth
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/tag/feature">
+                    <Link class="dropdown-item" href="/tag/feature">
                       Feature
                     </Link>
                   </li>
                   <li>
                     <a
-                      className="dropdown-item"
+                      class="dropdown-item"
                       href="https://tessonilo.gardaanimalia.com"
                       target="_blank"
                     >
@@ -449,18 +428,18 @@ export default function Navbar() {
                 </ul>
               </div>
               <div>
-                <Link className="nav-link" href="/category/opini">
+                <Link class="nav-link" href="/category/opini">
                   Opini
                 </Link>
               </div>
               <div>
-                <Link className="nav-link" href="/category/edukasi">
+                <Link class="nav-link" href="/category/edukasi">
                   Edukasi
                 </Link>
               </div>
               <div>
                 <a
-                  className="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -468,19 +447,19 @@ export default function Navbar() {
                 >
                   Susastra
                 </a>
-                <ul className="dropdown-menu">
+                <ul class="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" href="/tag/cerita-pendek">
+                    <Link class="dropdown-item" href="/tag/cerita-pendek">
                       Cerita Pendek
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/tag/musik">
+                    <Link class="dropdown-item" href="/tag/musik">
                       Musik
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/tag/puisi">
+                    <Link class="dropdown-item" href="/tag/puisi">
                       Puisi
                     </Link>
                   </li>
@@ -488,7 +467,7 @@ export default function Navbar() {
               </div>
               <div>
                 <a
-                  className="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -496,24 +475,24 @@ export default function Navbar() {
                 >
                   Publikasi
                 </a>
-                <ul className="dropdown-menu">
+                <ul class="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" href="/category/jurnal">
+                    <Link class="dropdown-item" href="/category/jurnal">
                       Jurnal
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/category/ulasan">
+                    <Link class="dropdown-item" href="/category/ulasan">
                       Ulasan
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/category/infografis">
+                    <Link class="dropdown-item" href="/category/infografis">
                       Infografis
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/category/video">
+                    <Link class="dropdown-item" href="/category/video">
                       Video
                     </Link>
                   </li>
@@ -521,7 +500,7 @@ export default function Navbar() {
               </div>
               <div>
                 <a
-                  className="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -529,31 +508,28 @@ export default function Navbar() {
                 >
                   Kontributor
                 </a>
-                <ul className="dropdown-menu">
+                <ul class="dropdown-menu">
                   <li>
                     <Link
-                      className="dropdown-item"
+                      class="dropdown-item"
                       href="/page/daftar-menjadi-kontributor"
                     >
                       Bergabung
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="dropdown-item"
-                      href="/page/tugas-kontributor"
-                    >
+                    <Link class="dropdown-item" href="/page/tugas-kontributor">
                       Tugas Kontributor
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/kirim-aduan">
+                    <Link class="dropdown-item" href="/kirim-aduan">
                       Kirim Aduan
                     </Link>
                   </li>
                   <li>
                     <a
-                      className="dropdown-item"
+                      class="dropdown-item"
                       href="https://docs.google.com/forms/d/e/1FAIpQLScSjj8TOsKLClJzj6aB3FC7Wq2PkIKS3q1YhRQBl92dUO5ygg/viewform?pli=1"
                       target="_blank"
                     >
@@ -561,14 +537,14 @@ export default function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/page/faq">
+                    <Link class="dropdown-item" href="/page/faq">
                       FAQ
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <Link className="nav-link" href="/indeks">
+                <Link class="nav-link" href="/indeks">
                   Indeks
                 </Link>
               </div>

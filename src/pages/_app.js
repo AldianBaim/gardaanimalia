@@ -18,12 +18,14 @@ export default function App({ Component, pageProps }) {
       <main className="mx-4" style={{ paddingTop: "110px" }}>
         <div className="row">
           <div className="col-lg-2 d-none d-lg-block text-center">
-            <img
-              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
-              className="w-75 object-fit-cover sticky-top"
-              style={{ height: "88vh" }}
-              alt=""
-            />
+            <div className="sticky-top" style={{ top: "100px" }}>
+              <img
+                src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
+                className="w-75 object-fit-cover sticky-top"
+                style={{ height: "88vh" }}
+                alt=""
+              />
+            </div>
           </div>
 
           <div className="col-lg-8">
@@ -32,12 +34,14 @@ export default function App({ Component, pageProps }) {
           </div>
 
           <div className="col-lg-2 d-none d-lg-block  text-center">
-            <img
-              src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
-              className="w-75 object-fit-cover"
-              style={{ height: "88vh" }}
-              alt=""
-            />
+            <div className="sticky-top" style={{ top: "100px" }}>
+              <img
+                src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
+                className="w-75 object-fit-cover sticky-top"
+                style={{ height: "88vh" }}
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </main>
