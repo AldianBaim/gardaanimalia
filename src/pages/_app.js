@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
       <Navbar />
       <main className="mx-4" style={{ paddingTop: "110px" }}>
         <div className="row">
-          <div className="col-lg-2 d-none d-lg-block text-center">
+          <div className="col-lg-2 d-none d-lg-block text-center px-0">
             <div className="sticky-top" style={{ top: "100px" }}>
               <img
                 src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
             <Footer />
           </div>
 
-          <div className="col-lg-2 d-none d-lg-block  text-center">
+          <div className="col-lg-2 d-none d-lg-block text-center px-0">
             <div className="sticky-top" style={{ top: "100px" }}>
               <img
                 src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
