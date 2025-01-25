@@ -117,7 +117,7 @@ export default function Detail({
                   />
                   <div className="d-flex flex-column text-xs">
                     <div className="d-flex gap-3">
-                      <span>Mutia Hanifah</span>
+                      <span>{post?.writer}</span>
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -262,11 +262,11 @@ export default function Detail({
                 </div>
                 <div className="d-flex gap-3 mt-4">
                   <div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">
-                    Writer: Mutia Hanifah
+                    Writer: {post?.writer}
                   </div>
-                  <div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">
+                  {/* <div className="small border-start border-3 border-warning ps-1 bg-body-tertiary p-2">
                     Editor: Bayu Nanda
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="mt-4">
