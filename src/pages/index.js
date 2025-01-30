@@ -458,7 +458,7 @@ export default function Home({
                   perView={3.5}
                   background={["#8FAB5A", "#DADDD6"]}
                   color={"text-dark"}
-                  data={postOpini}
+                  data={postInvestigatif}
                 />
               )}
               {postOpini.length !== 0 && (
