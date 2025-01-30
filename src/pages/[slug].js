@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -57,8 +57,15 @@ export default function Detail({
   relatedPost,
   popularPosts,
 }) {
-  const baseURL = window.location.origin;
+  const [baseURL, setBaseURL] = useState();
   const [showShare, setShowShare] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setBaseURL(window.location.origin);
+    }
+  }, []);
+
   return (
     <>
       <Head>
