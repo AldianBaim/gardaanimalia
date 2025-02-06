@@ -197,16 +197,23 @@ export default function Home({
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
-                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded img-full"
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/JUBIR%20SARWA-COMING%20SOON.png"
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
                   alt="Slider 1"
                 />
               </div>
               <div className="carousel-item">
                 <img
-                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/slide2.png"
-                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded img-full"
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/HEADER%20WEB%201%20(2110%20px%20x%20430%20px).png"
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
                   alt="Slider 2"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/HEADER%20WEB%202%20(2110%20px%20x%20430%20px)-2.png"
+                  className="w-100 object-fit-cover mb-3 mt-lg-3 rounded"
+                  alt="Slider 3"
                 />
               </div>
             </div>
