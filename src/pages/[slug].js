@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 import { useEffect, useState } from "react";
+import Slider from "@/components/global/Slider/Slider";
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -98,12 +99,7 @@ export default function Detail({
       </Head>
       <div>
         <main className={styles.main}>
-          <img
-            src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-            className="w-100 object-fit-cover mb-3 d-none d-lg-block"
-            height={"300px"}
-            alt=""
-          />
+          <Slider/>
           <div className="row">
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">

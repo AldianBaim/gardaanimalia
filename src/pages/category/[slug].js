@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
+import Slider from "@/components/global/Slider/Slider";
 
 export async function getServerSideProps({ params }) {
   const { slug } = params;
@@ -122,12 +123,7 @@ export default function Category({
       </Head>
       <div>
         <main>
-          <img
-            src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-            className="w-100 object-fit-cover mb-4"
-            height={"300px"}
-            alt=""
-          />
+          <Slider/>
           <div className="row">
             <div className="col-lg-8">
               <div className="d-flex align-items-center mb-1">

@@ -1,3 +1,4 @@
+import Slider from "@/components/global/Slider/Slider";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -59,12 +60,7 @@ export default function KirimAduan() {
       </Head>
       <div>
         <main>
-          <img
-            src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-            className="w-100 object-fit-cover mb-4"
-            height={"300px"}
-            alt=""
-          />
+          <Slider/>
           <div className="row">
             <div className="col-lg-8">
               <h3 className="mb-2">Kirim Aduan</h3>

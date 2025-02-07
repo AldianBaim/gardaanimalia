@@ -3,6 +3,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import CardHorizontal from "@/components/global/Card/CardHorizontal/CardHorizontal";
+import Slider from "@/components/global/Slider/Slider";
 
 export default function Indeks() {
   return (
@@ -58,12 +59,7 @@ export default function Indeks() {
       </Head>
       <div>
         <main>
-          <img
-            src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/Screenshot%202024-12-20%20at%2019.56.16.png"
-            className="w-100 object-fit-cover mb-4"
-            height={"300px"}
-            alt=""
-          />
+          <Slider/>
           <div className="row">
             <div className="col-lg-8">
               <div className="d-flex align-items-center mb-1">
