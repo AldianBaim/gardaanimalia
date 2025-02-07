@@ -19,12 +19,14 @@ export default function App({ Component, pageProps }) {
         <div className="row">
           <div className="col-lg-2 d-none d-lg-block text-center px-0">
             <div className="sticky-top" style={{ top: "100px" }}>
-              <img
-                src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
-                className="w-75 object-fit-cover sticky-top"
-                style={{ height: "88vh" }}
-                alt=""
-              />
+              <a href="https://drive.google.com/file/d/1FBhxNxF19PK1wQIfKHKNlyR-M8dJIJF7/view?usp=sharing" target="_blank">
+                <img
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/BANNER%20WEB-KIRI.png"
+                  className="w-75 object-fit-cover sticky-top"
+                  style={{ height: "88vh" }}
+                  alt=""
+                />
+              </a>
             </div>
           </div>
 
@@ -35,12 +37,14 @@ export default function App({ Component, pageProps }) {
 
           <div className="col-lg-2 d-none d-lg-block text-center px-0">
             <div className="sticky-top" style={{ top: "100px" }}>
-              <img
-                src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/nillo"
-                className="w-75 object-fit-cover sticky-top"
-                style={{ height: "88vh" }}
-                alt=""
-              />
+              <a href="https://tessonilo.gardaanimalia.com" target="_blank">
+                <img
+                  src="https://ik.imagekit.io/8jggdaymrs/gardaanimalia/BANNER%20WEB-KANAN.png"
+                  className="w-75 object-fit-cover sticky-top"
+                  style={{ height: "88vh" }}
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>
