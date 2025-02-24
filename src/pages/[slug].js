@@ -228,6 +228,7 @@ export default function Detail({
 
                 <div className="mb-4">
                   <p
+                    id="content"
                     className=""
                     dangerouslySetInnerHTML={{ __html: post?.content }}
                   ></p>

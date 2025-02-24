@@ -130,6 +130,14 @@ a {
   content: none !important;
 }
 
+@media screen and (max-width: 428px) {
+  #content img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
