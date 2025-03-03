@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
 import SectionSwiper from "@/components/Navbar/Section/SectionSwiper/SectionSwiper";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,6 +16,7 @@ export async function getServerSideProps() {
       postOpiniRes,
       postEdukasiRes,
       postLiputanKhususRes,
+      slidersRes,
     ] = await Promise.all([
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`),
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/popular`),
@@ -28,6 +28,9 @@ export async function getServerSideProps() {
       fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/posts/byCategory/liputan-khusus`
       ),
+      fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/collection/index/homepage_slider`
+      ),
     ]);
 
     const { data: posts } = await postsRes.json();
@@ -36,6 +39,10 @@ export async function getServerSideProps() {
     const { data: postOpini } = await postOpiniRes.json();
     const { data: postEdukasi } = await postEdukasiRes.json();
     const { data: postLiputanKhusus } = await postLiputanKhususRes.json();
+
+    // Handling different response formats for sliders
+    const slidersJson = await slidersRes.json();
+    const sliders = slidersJson;
 
     // Pass data to the page via props
     return {
@@ -46,6 +53,7 @@ export async function getServerSideProps() {
         postOpini,
         postEdukasi,
         postLiputanKhusus,
+        sliders,
       },
     };
   } catch (error) {
@@ -61,7 +69,9 @@ export default function Home({
   postOpini,
   postEdukasi,
   postLiputanKhusus,
+  sliders,
 }) {
+
   const [youtube] = useState([
     {
       id: "RNun7WCmB9I",
@@ -89,53 +99,16 @@ export default function Home({
     },
   ]);
 
-  const [sliders] = useState([
-    {
-      slider_head: {
-        title:
-          "Selamatkan Rusa Timor, BKSDA Yogyakarta Lakukan Evakuasi dan Rehabilitasi",
-        views: 134,
-        created_at: "13 Januari 2023",
-        url: "https://images.unsplash.com/photo-1524655104453-91f9338ecb94?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      },
-      slider_foot: [
-        {
-          title: "Status konservasi komodo dalam IUCN redlist book",
-          views: 231,
-          created_at: "07 Januari 2023",
-          url: "https://plus.unsplash.com/premium_photo-1661843714194-62e7bc511d8b?q=80&w=3011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-          title: "Studi: Monyet Bisa Lihai Hindari Serangan Ular Karena Ini",
-          views: 189,
-          created_at: "08 Januari 2023",
-          url: "https://images.unsplash.com/photo-1511478907007-2f761980416b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-      ],
-    },
-    {
-      slider_head: {
-        title: "Fakta Terbaru Tentang Monyet Ekor Panjang",
-        views: 319,
-        created_at: "01 Januari 2023",
-        url: "https://images.unsplash.com/photo-1504509754994-456e667638ac?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      },
-      slider_foot: [
-        {
-          title: "Gajah Ngatini Lahirkan Bayi Betina di TWA Buluh Cina",
-          views: 287,
-          created_at: "03 Januari 2023",
-          url: "https://images.unsplash.com/photo-1449104532935-d9209c70e2b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-          title: "Jerapah Akan Masuk Daftar Spesies Terancam Punah",
-          views: 89,
-          created_at: "05 Januari 2023",
-          url: "https://images.unsplash.com/photo-1683530364692-714f34db2d16?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-      ],
-    },
-  ]);
+  const groupedSliders = [];
+  const headItems = sliders.filter((item) => item.tag === "Head");
+  const footItems = sliders.filter((item) => item.tag === "Foot");
+
+  headItems.forEach((head, index) => {
+    groupedSliders.push({
+      head: head,
+      foot: footItems.slice(index * 2, index * 2 + 2), // Ambil 2 item "Foot"
+    });
+  });
 
   return (
     <>
@@ -190,7 +163,7 @@ export default function Home({
       </Head>
       <div>
         <div>
-          <Slider/>
+          <Slider />
           <div className="row">
             <div className="col-lg-8 px-0 px-lg-2">
               <div className="card p-0 border-0">
@@ -201,56 +174,47 @@ export default function Home({
                     navigation={true}
                     modules={[Navigation]}
                     breakpoints={{
-                      // when window width is >= 320px
-                      320: {
-                        slidesPerView: 1,
-                      },
-                      // when window width is >= 640px
-                      640: {
-                        slidesPerView: 2,
-                      },
-                      // when window width is >= 768px
-                      768: {
-                        slidesPerView: 1,
-                      },
+                      320: { slidesPerView: 1 },
+                      640: { slidesPerView: 2 },
+                      768: { slidesPerView: 1 },
                     }}
                     className="mySwiper"
                   >
-                    {sliders.map((item, index) => (
+                    {groupedSliders.map((group, index) => (
                       <SwiperSlide key={index}>
+                        {/* Slider Head */}
                         <div className="card position-relative mb-2">
                           <img
-                            src={item.slider_head.url}
-                            alt="Banner 1"
+                            src={group.head.url}
+                            alt={group.head.title}
                             className="w-100 object-fit-cover position-relative img-dark"
-                            height={"400px"}
+                            height="400px"
                           />
                           <div className="position-absolute p-3 mb-5 bottom-0 text-white">
-                            <h6 className="text-white">
-                              {item.slider_head.title}
-                            </h6>
+                            <h6 className="text-white">{group.head.title}</h6>
                             <div className="d-flex">
-                              {item.slider_head.views} views |{" "}
-                              {item.slider_head.created_at}
+                              {group.head.views} views | {group.head.date}
                             </div>
                           </div>
                         </div>
+
+                        {/* Slider Foot */}
                         <div className="row">
-                          {item.slider_foot.map((foot, index) => (
-                            <div key={index} className="col-lg-6 px-1 mb-2">
+                          {group.foot.map((foot, i) => (
+                            <div key={i} className="col-lg-6 px-1 mb-2">
                               <div className="card position-relative">
                                 <img
                                   src={foot.url}
                                   alt={foot.title}
                                   className="position-relative object-fit-cover img-dark"
-                                  height={"200px"}
+                                  height="200px"
                                 />
                                 <div className="position-absolute p-3 bottom-0 text-white">
                                   <div className="text-white small mb-2">
                                     {foot.title}
                                   </div>
                                   <div className="d-flex small">
-                                    {foot.views} views | {foot.created_at}
+                                    {foot.views} views | {foot.date}
                                   </div>
                                 </div>
                               </div>
