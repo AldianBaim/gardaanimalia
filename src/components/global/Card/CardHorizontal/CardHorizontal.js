@@ -1,14 +1,28 @@
+import { useEffect, useState } from "react";
+
 export default function CardHorizontal({ data, type = "content" }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
     <div className="row hover mb-4 mb-lg-3">
       <div className="col-4 pe-0">
         <img
           src={data?.picture || "https://via.placeholder.com/150"}
-          className={`w-100 object-fit-cover ${
-            type === "content" && "rounded"
-          }`}
+          className={`w-100 object-fit-cover rounded`}
           alt={data?.title}
-          height={type === "content" && "150px"}
+          height={
+            type === "sidebar" && isMobile
+              ? "150px"
+              : type === "content"
+              ? "150px"
+              : "100px"
+          }
         />
       </div>
       <div className="col-8 text-xs">

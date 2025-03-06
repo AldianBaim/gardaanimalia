@@ -229,7 +229,7 @@ export default function Home({
                           href={`/${post?.slug}`}
                           className="text-decoration-none text-dark"
                         >
-                          <CardHorizontal data={post} />
+                          <CardHorizontal data={post} type="content" />
                         </Link>
                       ))
                       .slice(5, 10)}
