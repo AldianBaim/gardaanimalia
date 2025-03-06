@@ -99,7 +99,7 @@ export default function Detail({
       </Head>
       <div>
         <main className={styles.main}>
-          <Slider />
+          <Slider/>
           <div className="row">
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
@@ -273,109 +273,7 @@ export default function Detail({
                   </div> */}
                 </div>
 
-                <div className="mt-4">
-                  <div className="d-flex mb-4 gap-2">
-                    <a
-                      href="#"
-                      className="d-flex align-items-center justify-content-center rounded-circle bg-gold text-white me-auto"
-                      style={{ width: "40px", height: "40px" }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 0 24 24"
-                        width="24px"
-                        fill="currentColor"
-                      >
-                        <path d="M0 0h24v24H0V0z" fill="none"></path>
-                        <path d="M15 4v7H5.17L4 12.17V4h11m1-2H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm5 4h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1z"></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="d-flex align-items-center justify-content-center bg-gold rounded-circle text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        backgroundColor: "#3D5A98",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="0.63em"
-                        height="1em"
-                        viewBox="0 0 320 512"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="d-flex align-items-center justify-content-center bg-gold rounded-circle text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        backgroundColor: "#000",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231l5.45-6.231Zm-1.161 17.52h1.833L7.045 4.126H5.078L17.044 19.77Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="d-flex align-items-center justify-content-center bg-gold rounded-circle text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        backgroundColor: "#0088CB",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1.2em"
-                        height="1.5em"
-                        viewBox="0 0 448 512"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9l-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9l190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284L16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="d-flex align-items-center justify-content-center bg-gold rounded-circle text-white"
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        backgroundColor: "#23D366",
-                      }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="1.3em"
-                        height="1.5em"
-                        viewBox="0 0 448 512"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222c0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4l-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2c0-101.7 82.8-184.5 184.6-184.5c49.3 0 95.6 19.2 130.4 54.1c34.8 34.9 56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18c-5.1-1.9-8.8-2.8-12.5 2.8c-3.7 5.6-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4c-32.6-16.3-54-29.1-75.5-66c-5.7-9.8 5.7-9.1 16.3-30.3c1.8-3.7.9-6.9-.5-9.7c-1.4-2.8-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5c-3.2-.2-6.9-.2-10.6-.2c-3.7 0-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3c0 27.3 19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8c35.2 15.2 49 16.5 66.6 13.9c10.7-1.6 32.8-13.4 37.4-26.4c4.6-13 4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
+                <div className="mt-3">
                   <div className="d-flex align-items-center mb-3">
                     <div
                       style={{
@@ -388,31 +286,24 @@ export default function Detail({
                     ></div>
                     <div className="h5 m-0">Pos Terkait</div>
                   </div>
-                  <div className="row">
-                    {relatedPost.map((post, index) => (
-                      <div key={index} className="col-lg-4">
-                        <Link
-                          key={index}
-                          href={`/${post?.slug}`}
-                          className="text-decoration-none text-dark"
-                        >
-                          <CardHorizontal data={post} />
-                        </Link>
+                  {relatedPost.map((post, index) => (
+                    <Link
+                      key={index}
+                      href={`/${post?.slug}`}
+                      className="text-decoration-none text-dark"
+                    >
+                      <CardHorizontal data={post} />
+                    </Link>
+                  ))}
+                  {relatedPost.length === 0 && (
+                    <div className="card border-0">
+                      <div className="card-body p-0 py-2">
+                        <h6 className="text-center">Belum ada pos terkait</h6>
                       </div>
-                    ))}
-                    {relatedPost.length === 0 && (
-                      <div className="col-lg-12">
-                        <div className="card border-0">
-                          <div className="card-body p-0 py-2">
-                            <h6 className="text-center">
-                              Belum ada pos terkait
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
+
                 <div className="mt-3">
                   <div className="d-flex align-items-center mb-3">
                     <div
