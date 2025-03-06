@@ -99,7 +99,7 @@ export default function Detail({
       </Head>
       <div>
         <main className={styles.main}>
-          <Slider/>
+          <Slider />
           <div className="row">
             <div className="col-lg-8 px-0">
               <div className="card p-0 border-0">
@@ -392,35 +392,11 @@ export default function Detail({
                     {relatedPost.map((post, index) => (
                       <div key={index} className="col-lg-4">
                         <Link
+                          key={index}
                           href={`/${post?.slug}`}
                           className="text-decoration-none text-dark"
                         >
-                          <div className="card border-0 hover">
-                            <div className="position-relative">
-                              <img
-                                src={
-                                  post?.picture ||
-                                  "https://via.placeholder.com/150"
-                                }
-                                className="w-100 position-relative rounded"
-                                alt=""
-                              />
-                              {post?.tags
-                                ?.split(",")
-                                .map((tag, index) => (
-                                  <span
-                                    key={index}
-                                    className="badge bg-orange rounded-0 position-absolute bottom-0 start-0 m-2"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))
-                                .slice(0, 1)}
-                            </div>
-                            <div className="card-body p-0 py-2">
-                              <h6>{post?.title}</h6>
-                            </div>
-                          </div>
+                          <CardHorizontal data={post} />
                         </Link>
                       </div>
                     ))}
