@@ -99,17 +99,6 @@ export default function Home({
     },
   ]);
 
-  const groupedSliders = [];
-  const headItems = sliders.filter((item) => item.tag === "Head");
-  const footItems = sliders.filter((item) => item.tag === "Foot");
-
-  headItems.forEach((head, index) => {
-    groupedSliders.push({
-      head: head,
-      foot: footItems.slice(index * 2, index * 2 + 2), // Ambil 2 item "Foot"
-    });
-  });
-
   return (
     <>
       <Head>
@@ -173,56 +162,62 @@ export default function Home({
                     slidesPerView={1}
                     navigation={true}
                     modules={[Navigation]}
-                    breakpoints={{
-                      320: { slidesPerView: 1 },
-                      640: { slidesPerView: 2 },
-                      768: { slidesPerView: 1 },
-                    }}
                     className="mySwiper"
                   >
-                    {groupedSliders.map((group, index) => (
-                      <SwiperSlide key={index}>
-                        {/* Slider Head */}
-                        <div className="card position-relative mb-2">
-                          <img
-                            src={group.head.url}
-                            alt={group.head.title}
-                            className="w-100 object-fit-cover position-relative img-dark"
-                            height="400px"
-                          />
-                          <div className="position-absolute p-3 mb-5 bottom-0 text-white">
-                            <h6 className="text-white">{group.head.title}</h6>
-                            <div className="d-flex">
-                              {group.head.views} views | {group.head.date}
-                            </div>
-                          </div>
-                        </div>
+                    {Array.from(
+                      { length: Math.ceil(sliders.length / 3) },
+                      (_, index) => {
+                        const slideItems = sliders.slice(
+                          index * 3,
+                          index * 3 + 3
+                        );
 
-                        {/* Slider Foot */}
-                        <div className="row">
-                          {group.foot.map((foot, i) => (
-                            <div key={i} className="col-lg-6 px-1 mb-2">
-                              <div className="card position-relative">
-                                <img
-                                  src={foot.url}
-                                  alt={foot.title}
-                                  className="position-relative object-fit-cover img-dark"
-                                  height="200px"
-                                />
-                                <div className="position-absolute p-3 bottom-0 text-white">
-                                  <div className="text-white small mb-2">
-                                    {foot.title}
-                                  </div>
-                                  <div className="d-flex small">
-                                    {foot.views} views | {foot.date}
-                                  </div>
+                        return (
+                          <SwiperSlide key={index}>
+                            <div className="card position-relative mb-2">
+                              <img
+                                src={slideItems[0]?.url}
+                                alt={slideItems[0]?.title}
+                                className="w-100 object-fit-cover position-relative img-dark"
+                                height={"400px"}
+                              />
+                              <div className="position-absolute p-3 mb-5 bottom-0 text-white">
+                                <h6 className="text-white">
+                                  {slideItems[0]?.title}
+                                </h6>
+                                <div className="d-flex">
+                                  {slideItems[0]?.views} views |{" "}
+                                  {slideItems[0]?.created_at}
                                 </div>
                               </div>
                             </div>
-                          ))}
-                        </div>
-                      </SwiperSlide>
-                    ))}
+
+                            <div className="row">
+                              {slideItems.slice(1, 3).map((item, idx) => (
+                                <div key={idx} className="col-lg-6 px-1 mb-2">
+                                  <div className="card position-relative">
+                                    <img
+                                      src={item.url}
+                                      alt={item.title}
+                                      className="position-relative object-fit-cover img-dark"
+                                      height={"200px"}
+                                    />
+                                    <div className="position-absolute p-3 bottom-0 text-white">
+                                      <div className="text-white small mb-2">
+                                        {item.title}
+                                      </div>
+                                      <div className="d-flex small">
+                                        {item.views} views | {item.created_at}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </SwiperSlide>
+                        );
+                      }
+                    )}
                   </Swiper>
                 </div>
                 <div className="card p-0 border-0 my-4">
