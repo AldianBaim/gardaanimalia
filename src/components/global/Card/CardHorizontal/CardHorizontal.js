@@ -1,7 +1,7 @@
 export default function CardHorizontal({ data, type = "content" }) {
   return (
     <div className="row hover mb-4 mb-lg-3">
-      <div className="col-lg-4 pe-0">
+      <div className="col-4 pe-0">
         <img
           src={data?.picture || "https://via.placeholder.com/150"}
           className={`w-100 object-fit-cover ${
@@ -11,7 +11,7 @@ export default function CardHorizontal({ data, type = "content" }) {
           height={type === "content" && "150px"}
         />
       </div>
-      <div className="col-lg-8 text-xs">
+      <div className="col-8 text-xs">
         {type === "content" && (
           <h6 className="m-0 mt-2 mt-lg-0">{data?.title}</h6>
         )}
