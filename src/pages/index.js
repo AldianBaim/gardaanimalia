@@ -174,7 +174,7 @@ export default function Home({
 
                         return (
                           <SwiperSlide key={index}>
-                            <div className="card position-relative mb-2">
+                            <div className="card position-relative mb-2" onClick={() => (window.open(slideItems[0]?.link, '_blank'))} role="button">
                               <img
                                 src={slideItems[0]?.url}
                                 alt={slideItems[0]?.title}
@@ -186,7 +186,7 @@ export default function Home({
                                   {slideItems[0]?.title}
                                 </h6>
                                 <div className="d-flex">
-                                  {slideItems[0]?.views} views |{" "}
+                                  {slideItems[0]?.category} |{" "}
                                   {slideItems[0]?.created_at}
                                 </div>
                               </div>
@@ -195,7 +195,7 @@ export default function Home({
                             <div className="row">
                               {slideItems.slice(1, 3).map((item, idx) => (
                                 <div key={idx} className="col-lg-6 px-1 mb-2">
-                                  <div className="card position-relative">
+                                  <div className="card position-relative" onClick={() => (window.open(item.link, '_blank'))} role="button">
                                     <img
                                       src={item.url}
                                       alt={item.title}
@@ -207,7 +207,7 @@ export default function Home({
                                         {item.title}
                                       </div>
                                       <div className="d-flex small">
-                                        {item.views} views | {item.created_at}
+                                      {slideItems[0]?.category} | {item.created_at}
                                       </div>
                                     </div>
                                   </div>
